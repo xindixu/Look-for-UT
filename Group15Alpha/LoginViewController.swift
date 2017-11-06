@@ -35,16 +35,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func buttonAction(_ sender: Any) {
+       
+     
         if(button.titleLabel?.text == "    Login    "){
-            
-            Auth.auth().signIn(withEmail: (email?.text)!, password: (password?.text)!, completion: { user, error in
-                if let firebaseError = error{
-                    print(firebaseError.localizedDescription)
-                    return
-                }
+             if let e = email.text, let p = password.text {
+                Auth.auth().signIn(withEmail: e, password: p, completion: {(user, error) in
+                    if let firebaseError = error {
+                        print(firebaseError.localizedDescription)
+                        return
+                    }
                 print("success!")
             })
-            
+            }
+        }
            /*
             var authenticed = false
             for item in users{
@@ -67,21 +70,20 @@ class LoginViewController: UIViewController {
                 createAlert(title: "Error", message: "Wrong email & password combination.")
             }
             */
-        }
         else{
             /*
             // create new user
             users.append(User(email:(email?.text)!,password:(password?.text)!))
             */
-            
-            // firebase
-            Auth.auth().createUser(withEmail: (email?.text)!, password: (password?.text)!, completion: { user, error in
-                if let firebaseError = error{
-                    print(firebaseError.localizedDescription)
-                    return
+            if let e = email.text, let p = password.text {
+                Auth.auth().createUser(withEmail: e, password: p, completion: { (user, error) in
+                    if let firebaseError = error{
+                        print(firebaseError.localizedDescription)
+                        return
+                    }
+                    print("success!")
+                    })
                 }
-                print("success!")
-            })
         }
     }
     
