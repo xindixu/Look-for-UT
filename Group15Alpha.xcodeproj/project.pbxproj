@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0806A4811FABFC5900A05E42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0806A4801FABFC5900A05E42 /* GoogleService-Info.plist */; };
+		081F51041F9ECB4000297116 /* FindDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F51031F9ECB4000297116 /* FindDestinationViewController.swift */; };
+		081F51061F9EDAD900297116 /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F51051F9EDAD900297116 /* CongratsViewController.swift */; };
+		084EC5EE1FA2587200CE305D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5ED1FA2587200CE305D /* LoginViewController.swift */; };
+		084EC5F01FA262B600CE305D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5EF1FA262B600CE305D /* MainTabBarController.swift */; };
+		084EC5F21FA2630000CE305D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5F11FA2630000CE305D /* User.swift */; };
+		08B7D08E1FA96F6100393D09 /* StartPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */; };
+		9D2AD0691FA93EA5003DFD9D /* AccountChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2AD0681FA93EA5003DFD9D /* AccountChangeViewController.swift */; };
+		9DCC47C81FA7B92D003B060B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC47C71FA7B92D003B060B /* SettingsViewController.swift */; };
+		9DCC47CA1FA7B938003B060B /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC47C91FA7B938003B060B /* TutorialViewController.swift */; };
+		9DCC47CF1FA7C246003B060B /* Group15Alpha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC47CD1FA7C246003B060B /* Group15Alpha.xcdatamodeld */; };
+		9DF3EC931FA7E76C00A119F0 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3EC921FA7E76C00A119F0 /* AccountTableViewController.swift */; };
+		C5CC0EE5B85DC8E9ECEBC50C /* Pods_Group15Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA327016ECF794D9D013BAB /* Pods_Group15Alpha.framework */; };
 		F38A6CE01F9EA2780012AE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A6CDF1F9EA2780012AE64 /* AppDelegate.swift */; };
 		F38A6CE21F9EA2780012AE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A6CE11F9EA2780012AE64 /* ViewController.swift */; };
 		F38A6CE51F9EA2780012AE64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38A6CE31F9EA2780012AE64 /* Main.storyboard */; };
@@ -34,6 +47,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0806A4801FABFC5900A05E42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		081F51031F9ECB4000297116 /* FindDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDestinationViewController.swift; sourceTree = "<group>"; };
+		081F51051F9EDAD900297116 /* CongratsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
+		084EC5ED1FA2587200CE305D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		084EC5EF1FA262B600CE305D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		084EC5F11FA2630000CE305D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPlayingViewController.swift; sourceTree = "<group>"; };
+		0C45A38E7F8195109074D644 /* Pods-Group15Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group15Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Group15Alpha/Pods-Group15Alpha.release.xcconfig"; sourceTree = "<group>"; };
+		5EA327016ECF794D9D013BAB /* Pods_Group15Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group15Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6065E4C64617590958DB0610 /* Pods-Group15Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group15Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group15Alpha/Pods-Group15Alpha.debug.xcconfig"; sourceTree = "<group>"; };
+		6C6B5789C8F215BC9B14D3CD /* Pods_Group15AlphaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group15AlphaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75C07D3B314EAE3DD3CFA3C3 /* Pods_Group15AlphaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group15AlphaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D2AD0681FA93EA5003DFD9D /* AccountChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountChangeViewController.swift; sourceTree = "<group>"; };
+		9DCC47C71FA7B92D003B060B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9DCC47C91FA7B938003B060B /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		9DCC47CE1FA7C246003B060B /* Group15Alpha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Group15Alpha.xcdatamodel; sourceTree = "<group>"; };
+		9DF3EC921FA7E76C00A119F0 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		F38A6CDC1F9EA2780012AE64 /* Group15Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group15Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38A6CDF1F9EA2780012AE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38A6CE11F9EA2780012AE64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CC0EE5B85DC8E9ECEBC50C /* Pods_Group15Alpha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +105,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E88BC35C6FFF0B2F7DAD88D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EA327016ECF794D9D013BAB /* Pods_Group15Alpha.framework */,
+				6C6B5789C8F215BC9B14D3CD /* Pods_Group15AlphaTests.framework */,
+				75C07D3B314EAE3DD3CFA3C3 /* Pods_Group15AlphaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92485FF34E01C484602943AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6065E4C64617590958DB0610 /* Pods-Group15Alpha.debug.xcconfig */,
+				0C45A38E7F8195109074D644 /* Pods-Group15Alpha.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F38A6CD31F9EA2780012AE64 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +131,8 @@
 				F38A6CF31F9EA2780012AE64 /* Group15AlphaTests */,
 				F38A6CFE1F9EA2780012AE64 /* Group15AlphaUITests */,
 				F38A6CDD1F9EA2780012AE64 /* Products */,
+				92485FF34E01C484602943AF /* Pods */,
+				7E88BC35C6FFF0B2F7DAD88D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +149,23 @@
 		F38A6CDE1F9EA2780012AE64 /* Group15Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				0806A4801FABFC5900A05E42 /* GoogleService-Info.plist */,
 				F38A6CDF1F9EA2780012AE64 /* AppDelegate.swift */,
 				F38A6CE11F9EA2780012AE64 /* ViewController.swift */,
 				F38A6CE31F9EA2780012AE64 /* Main.storyboard */,
+				08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */,
+				9D2AD0681FA93EA5003DFD9D /* AccountChangeViewController.swift */,
+				9DCC47C71FA7B92D003B060B /* SettingsViewController.swift */,
+				9DF3EC921FA7E76C00A119F0 /* AccountTableViewController.swift */,
+				9DCC47C91FA7B938003B060B /* TutorialViewController.swift */,
+				084EC5ED1FA2587200CE305D /* LoginViewController.swift */,
+				084EC5EF1FA262B600CE305D /* MainTabBarController.swift */,
+				084EC5F11FA2630000CE305D /* User.swift */,
+				081F51031F9ECB4000297116 /* FindDestinationViewController.swift */,
+				081F51051F9EDAD900297116 /* CongratsViewController.swift */,
 				F38A6CE61F9EA2780012AE64 /* Assets.xcassets */,
 				F38A6CE81F9EA2780012AE64 /* LaunchScreen.storyboard */,
+				9DCC47CD1FA7C246003B060B /* Group15Alpha.xcdatamodeld */,
 				F38A6CEB1F9EA2780012AE64 /* Info.plist */,
 			);
 			path = Group15Alpha;
@@ -132,9 +196,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F38A6D041F9EA2780012AE64 /* Build configuration list for PBXNativeTarget "Group15Alpha" */;
 			buildPhases = (
+				2078E7695B0A5084EDE2D946 /* [CP] Check Pods Manifest.lock */,
 				F38A6CD81F9EA2780012AE64 /* Sources */,
 				F38A6CD91F9EA2780012AE64 /* Frameworks */,
 				F38A6CDA1F9EA2780012AE64 /* Resources */,
+				3809F3C7D2A3CADB322391E0 /* [CP] Embed Pods Frameworks */,
+				6D18FB60D366BE76DB4B7A65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F38A6CEA1F9EA2780012AE64 /* LaunchScreen.storyboard in Resources */,
+				0806A4811FABFC5900A05E42 /* GoogleService-Info.plist in Resources */,
 				F38A6CE71F9EA2780012AE64 /* Assets.xcassets in Resources */,
 				F38A6CE51F9EA2780012AE64 /* Main.storyboard in Resources */,
 			);
@@ -254,13 +322,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2078E7695B0A5084EDE2D946 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Group15Alpha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3809F3C7D2A3CADB322391E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Group15Alpha/Pods-Group15Alpha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Group15Alpha/Pods-Group15Alpha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D18FB60D366BE76DB4B7A65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Group15Alpha/Pods-Group15Alpha-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F38A6CD81F9EA2780012AE64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F38A6CE21F9EA2780012AE64 /* ViewController.swift in Sources */,
+				081F51041F9ECB4000297116 /* FindDestinationViewController.swift in Sources */,
+				9D2AD0691FA93EA5003DFD9D /* AccountChangeViewController.swift in Sources */,
+				9DCC47CA1FA7B938003B060B /* TutorialViewController.swift in Sources */,
+				9DF3EC931FA7E76C00A119F0 /* AccountTableViewController.swift in Sources */,
 				F38A6CE01F9EA2780012AE64 /* AppDelegate.swift in Sources */,
+				08B7D08E1FA96F6100393D09 /* StartPlayingViewController.swift in Sources */,
+				084EC5EE1FA2587200CE305D /* LoginViewController.swift in Sources */,
+				084EC5F01FA262B600CE305D /* MainTabBarController.swift in Sources */,
+				081F51061F9EDAD900297116 /* CongratsViewController.swift in Sources */,
+				084EC5F21FA2630000CE305D /* User.swift in Sources */,
+				9DCC47C81FA7B92D003B060B /* SettingsViewController.swift in Sources */,
+				9DCC47CF1FA7C246003B060B /* Group15Alpha.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +549,7 @@
 		};
 		F38A6D051F9EA2780012AE64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6065E4C64617590958DB0610 /* Pods-Group15Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Group15Alpha/Info.plist;
@@ -424,6 +562,7 @@
 		};
 		F38A6D061F9EA2780012AE64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C45A38E7F8195109074D644 /* Pods-Group15Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Group15Alpha/Info.plist;
@@ -507,6 +646,7 @@
 				F38A6D061F9EA2780012AE64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F38A6D071F9EA2780012AE64 /* Build configuration list for PBXNativeTarget "Group15AlphaTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +655,7 @@
 				F38A6D091F9EA2780012AE64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F38A6D0A1F9EA2780012AE64 /* Build configuration list for PBXNativeTarget "Group15AlphaUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,8 +664,22 @@
 				F38A6D0C1F9EA2780012AE64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9DCC47CD1FA7C246003B060B /* Group15Alpha.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9DCC47CE1FA7C246003B060B /* Group15Alpha.xcdatamodel */,
+			);
+			currentVersion = 9DCC47CE1FA7C246003B060B /* Group15Alpha.xcdatamodel */;
+			path = Group15Alpha.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F38A6CD41F9EA2780012AE64 /* Project object */;
 }
