@@ -1,0 +1,20 @@
+Beta checklist:
+
+1. Authentication:
+	a. Login/register w/ email -
+	b. Login/register w/ Facebook & other social media
+
+2. Account info & settings:
+	a. Interface building
+	b. Store info into user w/ firebase
+
+3. MapKit
+
+4. Realtime creating & assigning teams
+
+5. Sharing 
+
+6. Search/add friends
+
+7. 
+
