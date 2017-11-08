@@ -7,12 +7,11 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
-var users:[User] = [User(email:"admin", password:"admin")]
 
 class User {
-    var email: String
-    var password: String
+    
     var name: String
     var record: Float
     var couponList: [String]
@@ -23,9 +22,7 @@ class User {
     var createdDate: Calendar
     
     
-    init(email:String,password:String) {
-        self.email = email
-        self.password = password
+    init(key: String, dictionary: Dictionary<String,Any>) {
         self.name = ""
         self.record = 0;
         self.couponList = []

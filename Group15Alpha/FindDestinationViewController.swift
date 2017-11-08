@@ -7,33 +7,35 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class FindDestinationViewController: UIViewController {
-
-    var clueList: [String] {
-        get {
-            if ifTutorial {
-                return ["C0"]
-            } else {
-                return ["How’s the water look?",
-                        "How many steps can you count to the tower?",
-                        "Free planners at the front desk, have you found them?",
-                        "Take care of your hurts and financial needs here!",
-                        "Have you seen the US Post Office on campus?"]
-            }
-        }
-    }
+    var ref: DatabaseReference!
     
     var questionList: [String] {
         get {
             if ifTutorial {
                 return ["Q0"]
             } else {
-                return ["Q1:Let’s start out a little easy, This place is commonly known for graduation pictures",
-                        "Q2: I have a dream, but where though?",
-                        "Q3: Let’s go eat, I’m hungry (Abbreviations)",
-                        "Q4: Medical Issues? Me too",
-                        "Q5: This building’s exterior design is built correctly wrong"]
+                return ["1. How’s the water look?",
+                        "2. How many steps can you count to the tower?",
+                        "3. Free planners at the front desk, have you found them?",
+                        "4. Take care of your hurts and financial needs here!",
+                        "5. Have you seen the US Post Office on campus?"]
+            }
+        }
+    }
+    
+    var clueList: [String] {
+        get {
+            if ifTutorial {
+                return ["C0"]
+            } else {
+                return ["Let’s start out a little easy, This place is commonly known for graduation pictures",
+                        "I have a dream, but where though?",
+                        "Let’s go eat, I’m hungry (Abbreviations)",
+                        "Medical Issues? Me too",
+                        "This building’s exterior design is built correctly wrong"]
             }
         }
     }
@@ -47,13 +49,16 @@ class FindDestinationViewController: UIViewController {
                 //return ["littlefield fountain","east mall","sac","ssb","sutton hall"]
             }
         }
-    }
+     }
     
-    var currentQuestion = 0 // 0 - 4
+    
     var seconds = 3600
     var minutes:Double = 0
     var residual = 0
     var ifTutorial = false
+    
+    //var questionNum = [0,1,2,3,4,5]
+    var currentQuestion = 0
     
     @IBOutlet weak var timerL: UILabel!
     @IBOutlet weak var clue: UILabel!
@@ -64,9 +69,11 @@ class FindDestinationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         runTimer()
-        clue.text = "Clue: \(clueList[currentQuestion])"
-        question.text = "\(questionList[currentQuestion])"
+        
+        clue.text = clueList[currentQuestion]
+        question.text = questionList[currentQuestion]
         // Do any additional setup after loading the view.
     }
 
