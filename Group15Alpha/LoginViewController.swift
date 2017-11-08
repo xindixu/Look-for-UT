@@ -33,48 +33,57 @@ class LoginViewController: UIViewController {
             button.titleLabel?.text = "Register"
         }
     }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if authenticated {
+            return true
+        }
+        else{
+            return false
+        }
+    }
     
+    var authenticated = false
     @IBAction func buttonAction(_ sender: Any) {
-       
-     
         if(button.titleLabel?.text == "    Login    "){
-             if let e = email.text, let p = password.text {
+            if let e = email.text, let p = password.text {
                 Auth.auth().signIn(withEmail: e, password: p, completion: {(user, error) in
                     if let firebaseError = error {
                         print(firebaseError.localizedDescription)
                         return
                     }
-                print("success!")
-            })
+                    print("success!")
+                    //self.authenticated = true
+                    self.performSegue(withIdentifier: "toMainScreen", sender: self)
+                })
             }
         }
-           /*
-            var authenticed = false
-            for item in users{
-                if(email.text == item.email && password.text == item.password){
-                    authenticed = true
-                    break
-                }
-            }
-            
-            // login
-            if email.text! == "admin" && password.text! == "admin" {
-                // find user with email
-                // send user to the new vc
-                performSegue(withIdentifier: "toMainScreen", sender: self)
-            }
-            else if authenticed{
-                performSegue(withIdentifier: "toMainScreen", sender: self)
-            }
-            else{
-                createAlert(title: "Error", message: "Wrong email & password combination.")
-            }
-            */
+            /*
+             var authenticed = false
+             for item in users{
+             if(email.text == item.email && password.text == item.password){
+             authenticed = true
+             break
+             }
+             }
+             
+             // login
+             if email.text! == "admin" && password.text! == "admin" {
+             // find user with email
+             // send user to the new vc
+             performSegue(withIdentifier: "toMainScreen", sender: self)
+             }
+             else if authenticed{
+             performSegue(withIdentifier: "toMainScreen", sender: self)
+             }
+             else{
+             createAlert(title: "Error", message: "Wrong email & password combination.")
+             }
+             */
         else{
             /*
-            // create new user
-            users.append(User(email:(email?.text)!,password:(password?.text)!))
-            */
+             // create new user
+             users.append(User(email:(email?.text)!,password:(password?.text)!))
+             */
             if let e = email.text, let p = password.text {
                 Auth.auth().createUser(withEmail: e, password: p, completion: { (user, error) in
                     if let firebaseError = error{
@@ -82,8 +91,10 @@ class LoginViewController: UIViewController {
                         return
                     }
                     print("success!")
-                    })
-                }
+                    //self.authenticated = true
+                    self.performSegue(withIdentifier: "toMainScreen", sender: self)
+                })
+            }
         }
     }
     
