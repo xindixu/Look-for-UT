@@ -14,6 +14,7 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createTabs()
         // Do any additional setup after loading the view.
     }
 
@@ -23,7 +24,7 @@ class MainTabBarController: UITabBarController {
     }
     
     fileprivate func createTabs() {
-        
+        print("hello")
     }
 
     /*
