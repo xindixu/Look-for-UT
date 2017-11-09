@@ -50,6 +50,21 @@ class LoginViewController: UIViewController {
     @IBAction func buttonAction(_ sender: Any) {
         if(button.titleLabel?.text == "    Login    "){
             print("login")
+            
+            //print out the login and password
+            let userID = Auth.auth().currentUser?.uid
+            print("UserID is \(userID!)")
+            ref.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                print("Value is \(value)")
+                let username = value?["username"] as? String ?? ""
+                print("username is \(username)")
+                //let user = User(username: username, dictionary: <#Dictionary<String, Any>#>)
+            }) {(error) in
+                print(error.localizedDescription)
+            }
+    
+            
             if let e = email.text, let p = password.text {
                 Auth.auth().signIn(withEmail: e, password: p, completion: {(user, error) in
                     if error != nil {
@@ -96,6 +111,7 @@ class LoginViewController: UIViewController {
         
         // set firebase ref
         ref = Database.database().reference()
+        print("This is the ref variable \(ref!)")
     }
 
     override func didReceiveMemoryWarning() {

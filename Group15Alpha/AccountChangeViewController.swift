@@ -14,7 +14,6 @@ class AccountChangeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        runFunc()
         // Do any additional setup after loading the view.
     }
 
@@ -22,10 +21,7 @@ class AccountChangeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func runFunc() {
-        print(functionCall)
-    }
+  
     
     /*
     // MARK: - Navigation
