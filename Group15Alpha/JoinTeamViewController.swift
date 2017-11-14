@@ -11,29 +11,28 @@ import FirebaseDatabase
 import FirebaseAuth
 class JoinTeamViewController: UIViewController {
     
-    // username: 1@utexas.edu, 2@utexas.edu
-    // password: 123456
-    
-    
     @IBOutlet weak var codeTF: UITextField!
     var ref:DatabaseReference?
-
-    var alterController: UIAlertController? = nil
     
     @IBAction func joinATeam(_ sender: Any) {
-        let c = codeTF.text!
+        let c = codeTF.text!.uppercased()
         print(c)
-        let handler = ref?.child("Games").observeSingleEvent(of:.value, with: {(snapshot) in
-            if snapshot.hasChild(c) {
-                print("valid code")
-                self.ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
-                self.performSegue(withIdentifier: "toGame", sender: self)
-            }
-            else{
-                print("invalid code")
-                self.createAlert(title: "Error", message: "Invalid code")
-            }
-        })
+        if c == "" {
+            createAlert(title: "Error", message: "Please enter a code")
+        }
+        else{
+            let handler = ref?.child("Games").observeSingleEvent(of:.value, with: {(snapshot) in
+                if snapshot.hasChild(c) {
+                    print("valid code")
+                    self.ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
+                    self.performSegue(withIdentifier: "toGame", sender: self)
+                }
+                else{
+                    print("invalid code")
+                    self.createAlert(title: "Error", message: "Invalid code")
+                }
+            })
+        }
     }
     
     override func viewDidLoad() {
@@ -55,6 +54,7 @@ class JoinTeamViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
     /*
     // MARK: - Navigation
 
