@@ -47,18 +47,18 @@ class LoginViewController: UIViewController {
     }
     
     var authenticated = false
+    
     @IBAction func buttonAction(_ sender: Any) {
         if(button.titleLabel?.text == "    Login    "){
             //print out the login and password
             let userID = Auth.auth().currentUser?.uid
-            print("UserID is \(userID!)")
+
             
             ref.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
                 
                 let emaill = value?["email"] as? String ?? ""
                 let username = value?["username"] as? String ?? ""
-
             }) {(error) in
                 print(error.localizedDescription)
  
