@@ -57,7 +57,6 @@ class LoginViewController: UIViewController {
                 print("Value is \(value)")
                 let username = value?["username"] as? String ?? ""
                 print("username is \(username)")
-                //let user = User(username: username, dictionary: <#Dictionary<String, Any>#>)
             }) {(error) in
                 print(error.localizedDescription)
             }

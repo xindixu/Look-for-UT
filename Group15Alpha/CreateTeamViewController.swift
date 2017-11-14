@@ -19,7 +19,7 @@ class CreateTeamViewController: UIViewController {
         super.viewDidLoad()
         codeL.text = generateCode()
         ref = Database.database().reference()
-        ref?.child("Games").child(codeL.text!).child("players").setValue(Auth.auth().currentUser)
+        ref?.child("Games").child(codeL.text!).child("players").setValue(Auth.auth().currentUser!.uid)
         
         handle = ref?.child("Games").observe(.value, with: { (snapshot) in
             for child in snapshot.children {

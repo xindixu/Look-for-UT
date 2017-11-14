@@ -15,6 +15,13 @@ class JoinTeamViewController: UIViewController {
     var ref:DatabaseReference?
     
     @IBAction func joinATeam(_ sender: Any) {
+        if let myGame = ref?.child("Games").queryEqual(toValue: codeTF.text?.capitalized) {
+            print(myGame)
+            performSegue(withIdentifier: "toGame", sender: Any?)
+        }
+        else{
+            print("\n\n\n\n!!!Invaild!!!")
+        }
         
     }
     

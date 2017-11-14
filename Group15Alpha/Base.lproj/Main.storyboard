@@ -403,7 +403,7 @@
                                 <state key="normal" title="Go!"/>
                                 <connections>
                                     <action selector="joinATeam:" destination="5OK-mh-lCL" eventType="touchUpInside" id="4jl-U6-qMC"/>
-                                    <segue destination="TiA-v1-0Mf" kind="show" id="hiX-n2-lpa"/>
+                                    <segue destination="TiA-v1-0Mf" kind="show" identifier="toGame" id="hiX-n2-lpa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTs-u7-JMf">
