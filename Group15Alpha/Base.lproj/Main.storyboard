@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -169,7 +169,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rgC-gS-uof">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -228,8 +228,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcA-5e-qOj">
                                 <rect key="frame" x="161" y="530" width="53" height="30"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Signout"/>
                                 <connections>
+                                    <action selector="Signout:" destination="yzd-XL-qZm" eventType="touchUpInside" id="aGj-Bw-KKN"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="vNY-O6-sAP"/>
                                 </connections>
                             </button>
@@ -242,6 +243,15 @@
                                     <navigationItem title="Welcome" id="KQe-qh-VP5"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;current player&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kp5-MI-nMI">
+                                <rect key="frame" x="122.5" y="579" width="130" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="at6-Xv-Gfb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -254,6 +264,8 @@
                             <constraint firstItem="Edu-VS-2m5" firstAttribute="top" secondItem="ck0-mN-u3j" secondAttribute="bottom" constant="80" id="g7W-SB-Ccn"/>
                             <constraint firstItem="jKN-bj-YEx" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leading" id="gDu-id-6oh"/>
                             <constraint firstItem="qcA-5e-qOj" firstAttribute="top" secondItem="yOH-Jn-3SH" secondAttribute="bottom" constant="8" id="hCk-jT-feX"/>
+                            <constraint firstItem="kp5-MI-nMI" firstAttribute="centerX" secondItem="Yiw-8g-k7k" secondAttribute="centerX" id="n5L-hG-S9k"/>
+                            <constraint firstItem="kp5-MI-nMI" firstAttribute="top" secondItem="qcA-5e-qOj" secondAttribute="bottom" constant="19" id="nnH-jB-JsQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yOH-Jn-3SH" secondAttribute="trailing" constant="150" id="oij-3Z-M0C"/>
                             <constraint firstItem="E6H-BA-7r5" firstAttribute="top" secondItem="Edu-VS-2m5" secondAttribute="bottom" constant="45" id="rhg-Ki-0s1"/>
                             <constraint firstItem="yOH-Jn-3SH" firstAttribute="top" secondItem="E6H-BA-7r5" secondAttribute="bottom" constant="25" id="sBW-AL-Deh"/>
@@ -263,6 +275,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homeimg" id="VaV-6J-Lqe"/>
+                    <connections>
+                        <outlet property="currentPlayer" destination="kp5-MI-nMI" id="pnn-i1-KKr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snO-RL-qS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -713,6 +728,7 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Hqd-fL-khd"/>
         <segue reference="8J2-3U-v5s"/>
         <segue reference="hiX-n2-lpa"/>
         <segue reference="WEL-lw-oW7"/>

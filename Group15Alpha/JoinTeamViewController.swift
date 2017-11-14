@@ -22,18 +22,18 @@ class JoinTeamViewController: UIViewController {
     
     @IBAction func joinATeam(_ sender: Any) {
         let c = codeTF.text!
-        ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
-//
-//        if gameQuery == nil{
-//            print("Invalid")
-//            print(gameQuery.debugDescription)
-//            createAlert(title: "Error", message: "Invalid code")
-//        }
-//        else{
-//            print("Valid")
-//            print(gameQuery.debugDescription)
-//            performSegue(withIdentifier: "toGame", sender: self)
-//        }
+        print(c)
+        let handler = ref?.child("Games").observeSingleEvent(of:.value, with: {(snapshot) in
+            if snapshot.hasChild(c) {
+                print("valid code")
+                self.ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
+                self.performSegue(withIdentifier: "toGame", sender: self)
+            }
+            else{
+                print("invalid code")
+                self.createAlert(title: "Error", message: "Invalid code")
+            }
+        })
     }
     
     override func viewDidLoad() {

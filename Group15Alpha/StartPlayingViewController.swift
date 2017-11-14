@@ -7,22 +7,35 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class StartPlayingViewController: UIViewController {
 
     
     @IBOutlet weak var username: UILabel!
-    var user:User?
+    @IBOutlet weak var currentPlayer: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        currentPlayer.text = Auth.auth().currentUser?.email
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func Signout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        
+        do{
+            try firebaseAuth.signOut()
+        }
+        catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
     
 

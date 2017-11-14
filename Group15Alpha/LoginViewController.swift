@@ -56,15 +56,15 @@ class LoginViewController: UIViewController {
             let userID = Auth.auth().currentUser?.uid
 
             
-            ref.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-                let value = snapshot.value as? NSDictionary
-                
-                let emaill = value?["email"] as? String ?? ""
-                let username = value?["username"] as? String ?? ""
-            }) {(error) in
-                print(error.localizedDescription)
- 
-            }
+//            ref.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//                let value = snapshot.value as? NSDictionary
+//
+//                let email = value?["email"] as? String ?? ""
+//                let username = value?["username"] as? String ?? ""
+//            }) {(error) in
+//                print(error.localizedDescription)
+//
+//            }
             
             
             if let e = email.text, let p = password.text {
