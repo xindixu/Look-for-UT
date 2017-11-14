@@ -10,6 +10,7 @@ import UIKit
 import FirebaseDatabase
 
 class FindDestinationViewController: UIViewController {
+    
     var ref: DatabaseReference!
     
     var questionList: [String] {
@@ -69,7 +70,12 @@ class FindDestinationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set database ref
         ref = Database.database().reference()
+        ref?.child("Game").observe(.childAdded, with: {(snapshot) in
+            // code to execute when a child is added under "Players"
+            
+        })
         runTimer()
         
         clue.text = clueList[currentQuestion]

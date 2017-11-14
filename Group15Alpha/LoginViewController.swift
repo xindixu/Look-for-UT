@@ -49,8 +49,6 @@ class LoginViewController: UIViewController {
     var authenticated = false
     @IBAction func buttonAction(_ sender: Any) {
         if(button.titleLabel?.text == "    Login    "){
-            print("login")
-            
             //print out the login and password
             let userID = Auth.auth().currentUser?.uid
             print("UserID is \(userID!)")
@@ -78,7 +76,6 @@ class LoginViewController: UIViewController {
             }
         }
         else{
-            print("regi")
             if let e = email.text, let p = password.text {
                 Auth.auth().createUser(withEmail: e, password: p, completion: { (user, error) in
                     if error != nil {
@@ -86,7 +83,9 @@ class LoginViewController: UIViewController {
                         self.createAlert(title: "Error", message: (error?.localizedDescription)!)
                     }
                     else{
-                        self.ref?.child("Players").childByAutoId().setValue(["username":self.username.text])
+                        let userID = Auth.auth().currentUser?.uid
+                        self.ref?.child("Players").child(userID!).child("username").setValue(self.username.text)
+                        self.ref?.child("Players").child(userID!).child("email").setValue(self.email.text)
                         self.performSegue(withIdentifier: "toMainScreen", sender: self)
                     }
                 })
@@ -111,7 +110,6 @@ class LoginViewController: UIViewController {
         
         // set firebase ref
         ref = Database.database().reference()
-        print("This is the ref variable \(ref!)")
     }
 
     override func didReceiveMemoryWarning() {
