@@ -16,7 +16,6 @@ class JoinTeamViewController: UIViewController {
     
     @IBAction func joinATeam(_ sender: Any) {
         let c = codeTF.text!.uppercased()
-        print(c)
         if c == "" {
             createAlert(title: "Error", message: "Please enter a code")
         }
@@ -25,7 +24,8 @@ class JoinTeamViewController: UIViewController {
                 if snapshot.hasChild(c) {
                     print("valid code")
                     self.ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
-                    self.performSegue(withIdentifier: "toGame", sender: self)
+                    let controaller = self.storyboard?.instantiateViewController(withIdentifier: "getReady")
+                    self.present(controaller!, animated: true, completion: nil)
                 }
                 else{
                     print("invalid code")

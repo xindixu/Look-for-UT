@@ -296,7 +296,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kce-Pc-8nd">
-                                <rect key="frame" x="139.5" y="220" width="96" height="30"/>
+                                <rect key="frame" x="139.5" y="260" width="96" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="V4C-fC-CUH"/>
                                 </constraints>
@@ -306,7 +306,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiw-rm-Ky3">
-                                <rect key="frame" x="148" y="130" width="79" height="30"/>
+                                <rect key="frame" x="148" y="170" width="79" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="79" id="tBb-6I-G2p"/>
                                 </constraints>
@@ -316,7 +316,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X5-Sg-Mbe">
-                                <rect key="frame" x="172.5" y="295" width="30" height="30"/>
+                                <rect key="frame" x="172.5" y="335" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="2bb-Dc-wIR"/>
                                 </constraints>
@@ -331,7 +331,7 @@
                             <constraint firstItem="kce-Pc-8nd" firstAttribute="centerX" secondItem="WTi-d4-02H" secondAttribute="centerX" id="9MY-n4-0wY"/>
                             <constraint firstItem="kce-Pc-8nd" firstAttribute="top" secondItem="Kiw-rm-Ky3" secondAttribute="bottom" constant="60" id="LYR-e0-wyd"/>
                             <constraint firstItem="0X5-Sg-Mbe" firstAttribute="centerX" secondItem="WTi-d4-02H" secondAttribute="centerX" id="PQn-nR-7os"/>
-                            <constraint firstItem="Kiw-rm-Ky3" firstAttribute="top" secondItem="ul2-5p-AZX" secondAttribute="bottom" constant="110" id="X8j-EM-C6a"/>
+                            <constraint firstItem="Kiw-rm-Ky3" firstAttribute="top" secondItem="ul2-5p-AZX" secondAttribute="bottom" constant="150" id="X8j-EM-C6a"/>
                             <constraint firstItem="0X5-Sg-Mbe" firstAttribute="top" secondItem="kce-Pc-8nd" secondAttribute="bottom" constant="45" id="fSa-4L-DsC"/>
                             <constraint firstItem="Kiw-rm-Ky3" firstAttribute="centerX" secondItem="WTi-d4-02H" secondAttribute="centerX" id="fd2-ia-fdf"/>
                         </constraints>
@@ -432,7 +432,6 @@
                                 <state key="normal" title="Go!"/>
                                 <connections>
                                     <action selector="joinATeam:" destination="5OK-mh-lCL" eventType="touchUpInside" id="4jl-U6-qMC"/>
-                                    <segue destination="TiA-v1-0Mf" kind="show" identifier="toGame" id="hiX-n2-lpa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTs-u7-JMf">
@@ -476,7 +475,7 @@
         <!--Get ready!-->
         <scene sceneID="oHw-ii-l36">
             <objects>
-                <viewController title="Get ready!" hidesBottomBarWhenPushed="YES" id="TiA-v1-0Mf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="getReady" title="Get ready!" hidesBottomBarWhenPushed="YES" id="TiA-v1-0Mf" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5PI-75-Vxd"/>
                         <viewControllerLayoutGuide type="bottom" id="M7u-gt-YsV"/>
@@ -523,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxY-hT-io5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6881" y="-387"/>
+            <point key="canvasLocation" x="5716" y="-392"/>
         </scene>
         <!--destination n -->
         <scene sceneID="CAt-1U-MQ5">
@@ -632,7 +631,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4I-Q7-1sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7673" y="-387"/>
+            <point key="canvasLocation" x="6508" y="-391"/>
         </scene>
         <!--Congrats-->
         <scene sceneID="Jah-C1-SVa">
@@ -693,7 +692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKT-lV-GgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8489" y="-387"/>
+            <point key="canvasLocation" x="7324" y="-392"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="x8c-jo-QY5">
@@ -742,9 +741,7 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KCi-4z-vue"/>
         <segue reference="91Z-Oi-RV7"/>
-        <segue reference="lfg-Th-LnX"/>
         <segue reference="WEL-lw-oW7"/>
     </inferredMetricsTieBreakers>
 </document>
