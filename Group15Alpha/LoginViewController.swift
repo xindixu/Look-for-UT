@@ -52,18 +52,26 @@ class LoginViewController: UIViewController {
             //print out the login and password
             let userID = Auth.auth().currentUser?.uid
             print("UserID is \(userID!)")
+            
             ref.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
-                print("Value is \(value)")
+                
+                let emaill = value?["email"] as? String ?? ""
                 let username = value?["username"] as? String ?? ""
+<<<<<<< HEAD
+                print("username is \(username) : \(emaill)")
+=======
                 print("username is \(username)")
-                //let user = User(username: username, dictionary: <#Dictionary<String, Any>#>)
+>>>>>>> ea76ff155d79720db2bd70dfa96db2449e4394a3
             }) {(error) in
                 print(error.localizedDescription)
+ 
             }
     
             
+            
             if let e = email.text, let p = password.text {
+                print("password is \(p)")
                 Auth.auth().signIn(withEmail: e, password: p, completion: {(user, error) in
                     if error != nil {
                         print(error?.localizedDescription)

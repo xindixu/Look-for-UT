@@ -17,9 +17,9 @@ class CreateTeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        codeL.text = generateCode()
+        //codeL.text = generateCode()
         ref = Database.database().reference()
-        ref?.child("Games").child(codeL.text!).child("players").setValue(Auth.auth().currentUser)
+        ref?.child("Games").child(codeL.text!).child("players").setValue(Auth.auth().currentUser!.uid)
         
         handle = ref?.child("Games").observe(.value, with: { (snapshot) in
             for child in snapshot.children {
@@ -33,7 +33,7 @@ class CreateTeamViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func generateCode() -> String{
+    /*func generateCode() -> String{
         let letters:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = letters.count
         var randomString = ""
@@ -44,7 +44,7 @@ class CreateTeamViewController: UIViewController {
         }
         return randomString
     }
-
+*/
 
     /*
     // MARK: - Navigation

@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class AccountChangeViewController: UIViewController {
 
     var functionCall:String?
+    var ref: DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("in Account Change View Controller")
         // Do any additional setup after loading the view.
     }
 

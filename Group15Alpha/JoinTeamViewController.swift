@@ -13,11 +13,22 @@ class JoinTeamViewController: UIViewController {
     
     @IBOutlet weak var codeTF: UITextField!
     var ref:DatabaseReference?
-    
+    /*
     @IBAction func joinATeam(_ sender: Any) {
+        if let myGame = ref?.child("Games").queryEqual(toValue: codeTF.text?.capitalized) {
+            print(myGame)
+<<<<<<< HEAD
+            performSegue(withIdentifier: "toGame", sender: Any?())
+=======
+            performSegue(withIdentifier: "toGame", sender: Any?)
+>>>>>>> ea76ff155d79720db2bd70dfa96db2449e4394a3
+        }
+        else{
+            print("\n\n\n\n!!!Invaild!!!")
+        }
         
     }
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
