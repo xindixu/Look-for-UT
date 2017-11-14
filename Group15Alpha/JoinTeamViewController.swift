@@ -32,7 +32,7 @@ class JoinTeamViewController: UIViewController {
                     // get the data uner "Games/<code>/players"
                     _ = playerRef?.observeSingleEvent(of: .value, with: {(players) in
                         // number of people in a team smaller than 5
-                        // reject request of joining a team 
+                        // reject request of joining a team
                         if players.childrenCount < self.maxNumOfPlayer {
                             self.ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
                             let controaller = self.storyboard?.instantiateViewController(withIdentifier: "getReady")
