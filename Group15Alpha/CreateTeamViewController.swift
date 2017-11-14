@@ -13,19 +13,14 @@ class CreateTeamViewController: UIViewController {
 
     @IBOutlet weak var codeL: UILabel!
     var ref: DatabaseReference?
-    var handle:DatabaseHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        codeL.text = generateCode()
+        let c = generateCode()
+        codeL.text! = c
         ref = Database.database().reference()
-        ref?.child("Games").child(codeL.text!).child("players").setValue(Auth.auth().currentUser!.uid)
+        ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
         
-        handle = ref?.child("Games").observe(.value, with: { (snapshot) in
-            for child in snapshot.children {
-                print(child)
-            }
-        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +32,7 @@ class CreateTeamViewController: UIViewController {
         let letters:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = letters.count
         var randomString = ""
-        for _ in 0...6 {
+        for _ in 0...5 {
             let randomNum = Int(arc4random_uniform(UInt32(len)))
             let char = letters[letters.index(letters.startIndex, offsetBy: randomNum)]
             randomString.append(char)

@@ -8,21 +8,31 @@
 
 import UIKit
 import FirebaseDatabase
-
+import FirebaseAuth
 class JoinTeamViewController: UIViewController {
+    
+    // username: 1@utexas.edu, 2@utexas.edu
+    // password: 123456
+    
     
     @IBOutlet weak var codeTF: UITextField!
     var ref:DatabaseReference?
+    var alterController: UIAlertController? = nil
     
     @IBAction func joinATeam(_ sender: Any) {
-        if let myGame = ref?.child("Games").queryEqual(toValue: codeTF.text?.capitalized) {
-            print(myGame)
-            performSegue(withIdentifier: "toGame", sender: Any?)
-        }
-        else{
-            print("\n\n\n\n!!!Invaild!!!")
-        }
-        
+        let c = codeTF.text!
+        ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
+//
+//        if gameQuery == nil{
+//            print("Invalid")
+//            print(gameQuery.debugDescription)
+//            createAlert(title: "Error", message: "Invalid code")
+//        }
+//        else{
+//            print("Valid")
+//            print(gameQuery.debugDescription)
+//            performSegue(withIdentifier: "toGame", sender: self)
+//        }
     }
     
     override func viewDidLoad() {
@@ -35,7 +45,15 @@ class JoinTeamViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func createAlert(title:String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

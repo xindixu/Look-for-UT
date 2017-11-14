@@ -48,8 +48,10 @@ class LoginViewController: UIViewController {
     
     var authenticated = false
     @IBAction func buttonAction(_ sender: Any) {
+        
         if(button.titleLabel?.text == "    Login    "){
-            //print out the login and password
+            // login
+            // print out the login and password
             let userID = Auth.auth().currentUser?.uid
             print("UserID is \(userID!)")
             ref.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -60,7 +62,6 @@ class LoginViewController: UIViewController {
             }) {(error) in
                 print(error.localizedDescription)
             }
-    
             
             if let e = email.text, let p = password.text {
                 Auth.auth().signIn(withEmail: e, password: p, completion: {(user, error) in
@@ -74,7 +75,9 @@ class LoginViewController: UIViewController {
                 })
             }
         }
+            
         else{
+            // register
             if let e = email.text, let p = password.text {
                 Auth.auth().createUser(withEmail: e, password: p, completion: { (user, error) in
                     if error != nil {
