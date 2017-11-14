@@ -49,10 +49,10 @@ class AccountTableViewController: UITableViewController {
         let rowNumber = indexPath.row
         let details = funcNames[rowNumber]
         cell.textLabel?.text = details
-        
+
         
         // Configure the cell...
-
+        
         return cell
     }
     
@@ -98,9 +98,10 @@ class AccountTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "possibleedits" {
+            
             let selectedIndex = tableView.indexPathForSelectedRow?.row
-            if let acvc = segue.destination as? AccountChangeViewController {
-                
+                if let acvc = segue.destination as? AccountChangeViewController {
+                acvc.settingNumber = selectedIndex!
                 
             }
 

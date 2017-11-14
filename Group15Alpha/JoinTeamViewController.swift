@@ -17,6 +17,7 @@ class JoinTeamViewController: UIViewController {
     
     @IBOutlet weak var codeTF: UITextField!
     var ref:DatabaseReference?
+
     var alterController: UIAlertController? = nil
     
     @IBAction func joinATeam(_ sender: Any) {
