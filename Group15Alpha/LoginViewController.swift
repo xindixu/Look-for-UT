@@ -58,11 +58,7 @@ class LoginViewController: UIViewController {
                 
                 let emaill = value?["email"] as? String ?? ""
                 let username = value?["username"] as? String ?? ""
-<<<<<<< HEAD
-                print("username is \(username) : \(emaill)")
-=======
-                print("username is \(username)")
->>>>>>> ea76ff155d79720db2bd70dfa96db2449e4394a3
+
             }) {(error) in
                 print(error.localizedDescription)
  
