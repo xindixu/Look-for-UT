@@ -483,7 +483,7 @@
         <!--Get ready!-->
         <scene sceneID="oHw-ii-l36">
             <objects>
-                <viewController storyboardIdentifier="getReady" title="Get ready!" hidesBottomBarWhenPushed="YES" id="TiA-v1-0Mf" customClass="GamePrepViewController" customModule="Group15Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="getReady" title="Get ready!" hidesBottomBarWhenPushed="YES" id="TiA-v1-0Mf" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5PI-75-Vxd"/>
                         <viewControllerLayoutGuide type="bottom" id="M7u-gt-YsV"/>
@@ -789,6 +789,7 @@
     </resources>
     <inferredMetricsTieBreakers>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <segue reference="nID-69-c5p"/>
 =======
 <<<<<<< HEAD
@@ -797,6 +798,9 @@
 =======
         <segue reference="91Z-Oi-RV7"/>
 >>>>>>> 4f78ddd0fa9b86113147c9e70ceb7db0ca590adb
+=======
+        <segue reference="91Z-Oi-RV7"/>
+>>>>>>> parent of 382e233... minor changes
         <segue reference="WEL-lw-oW7"/>
 >>>>>>> 7409474a51857e21314de684867b7943badc8f90
     </inferredMetricsTieBreakers>
