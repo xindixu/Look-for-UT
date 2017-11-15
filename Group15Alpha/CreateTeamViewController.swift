@@ -16,10 +16,10 @@ class CreateTeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let c = generateCode()
-        codeL.text! = c
+        //let c = generateCode()
+        //codeL.text! = c
         ref = Database.database().reference()
-        ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
+        //ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
         
     }
 
@@ -27,7 +27,7 @@ class CreateTeamViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    /*
     func generateCode() -> String{
         let letters:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = letters.count
@@ -39,7 +39,7 @@ class CreateTeamViewController: UIViewController {
         }
         return randomString
     }
-
+*/
 
     /*
     // MARK: - Navigation

@@ -25,10 +25,7 @@ class AccountChangeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ref = Database.database().reference()
-        
-        print("in Account Change View Controller")
         
         promptChange()
 
@@ -40,20 +37,35 @@ class AccountChangeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
   
+    
+    
     func promptChange() {
         let userID = Auth.auth().currentUser?.uid
         ref?.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let email = value?["email"] as? String ?? ""
             let username = value?["username"] as? String ?? ""
+        
+        
+        let currentUser = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 30))
+        currentUser.center = CGPoint(x:160, y:200)
+        currentUser.text = username
+        let promptChange = UITextField(frame: CGRect(x:100, y:200, width: 100, height: 30))
+        let confirmChange = UIButton(frame: CGRect(x: 100, y: 300, width: 200, height: 30))
+        confirmChange.setTitle("Make Change", for: .normal)
+            confirmChange.addTarget(self, action: #selector(self.confirmClicked), for: UIControlEvents.touchUpInside)
+        
+        
             
             //Run this setup if change username is selected
             if(self.settingNumber == 0) {
                 print("value is \(username)")
-                var currentUser = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
                 currentUser.center = CGPoint(x:160, y:200)
-                currentUser.text = username
+                confirmChange.backgroundColor = .gray
+                promptChange.backgroundColor = .blue
                 self.view.addSubview(currentUser)
+                self.view.addSubview(promptChange)
+                self.view.addSubview(confirmChange)
             }
             
             //Run this setup if change password is selected
@@ -61,10 +73,10 @@ class AccountChangeViewController: UIViewController {
             
         }) {(error) in
             print(error.localizedDescription)
-            
         }
-        
-        
+    }
+    
+    func confirmClicked(sender: UIButton!) {
         
     }
     
