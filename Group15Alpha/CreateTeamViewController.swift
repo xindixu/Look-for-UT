@@ -30,6 +30,7 @@ class CreateTeamViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     func generateCode() -> String {
         let letters:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -45,11 +46,6 @@ class CreateTeamViewController: UIViewController {
 
     
     func generatePuzzleIndex() {
-//        var numOfPuzzle: Int?
-//        ref?.child("Puzzles").observeSingleEvent(of: .value, with: { (puzzles) in
-//            numOfPuzzle = Int(puzzles.childrenCount)
-//        })
-        
         // add random 5 puzzles
         while self.pIndex.count < 5 {
             print("While is working")
