@@ -7,7 +7,11 @@
 //
 
 import UIKit
+<<<<<<< HEAD
 import CoreLocation
+=======
+import FirebaseAuth
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
 
 class StartPlayingViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -16,10 +20,11 @@ class StartPlayingViewController: UIViewController, CLLocationManagerDelegate {
     var alertController: UIAlertController? = nil
     
     @IBOutlet weak var username: UILabel!
-    var user:User?
+    @IBOutlet weak var currentPlayer: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
         // check if the location service is available
         if CLLocationManager.locationServicesEnabled() {
@@ -38,6 +43,10 @@ class StartPlayingViewController: UIViewController, CLLocationManagerDelegate {
             print("no")
             self.displayAlert("Error", message: "Location Services not available!")
         }
+=======
+        currentPlayer.text = Auth.auth().currentUser?.email
+        // Do any additional setup after loading the view.
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +54,7 @@ class StartPlayingViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+<<<<<<< HEAD
     func displayAlert(_ title:String, message:String) {
         self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -52,6 +62,20 @@ class StartPlayingViewController: UIViewController, CLLocationManagerDelegate {
         self.alertController!.addAction(okAction)
         self.present(self.alertController!, animated: true, completion:nil)
     }
+=======
+    
+    @IBAction func Signout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        
+        do{
+            try firebaseAuth.signOut()
+        }
+        catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
 
     /*
     // MARK: - Navigation

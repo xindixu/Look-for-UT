@@ -53,25 +53,28 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     var authenticated = false
-    @IBAction func buttonAction(_ sender: Any) {
-        if(button.titleLabel?.text == "    Login    "){
-            print("login")
-            
-            //print out the login and password
-            let userID = Auth.auth().currentUser?.uid
-            print("UserID is \(userID!)")
-            ref.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-                let value = snapshot.value as? NSDictionary
-                print("Value is \(value)")
-                let username = value?["username"] as? String ?? ""
-                print("username is \(username)")
-                //let user = User(username: username, dictionary: <#Dictionary<String, Any>#>)
-            }) {(error) in
-                print(error.localizedDescription)
-            }
     
+    @IBAction func buttonAction(_ sender: Any) {
+        
+        if(button.titleLabel?.text == "    Login    "){
+            // login
+            // print out the login and password
+            let userID = Auth.auth().currentUser?.uid
+
+            
+//            ref.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//                let value = snapshot.value as? NSDictionary
+//
+//                let email = value?["email"] as? String ?? ""
+//                let username = value?["username"] as? String ?? ""
+//            }) {(error) in
+//                print(error.localizedDescription)
+//
+//            }
+            
             
             if let e = email.text, let p = password.text {
+                print("password is \(p)")
                 Auth.auth().signIn(withEmail: e, password: p, completion: {(user, error) in
                     if error != nil {
                         print(error?.localizedDescription)
@@ -83,8 +86,9 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
                 })
             }
         }
+            
         else{
-            print("regi")
+            // register
             if let e = email.text, let p = password.text {
                 Auth.auth().createUser(withEmail: e, password: p, completion: { (user, error) in
                     if error != nil {
@@ -92,7 +96,9 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
                         self.createAlert(title: "Error", message: (error?.localizedDescription)!)
                     }
                     else{
-                        self.ref?.child("Players").childByAutoId().setValue(["username":self.username.text])
+                        let userID = Auth.auth().currentUser?.uid
+                        self.ref?.child("Players").child(userID!).child("username").setValue(self.username.text)
+                        self.ref?.child("Players").child(userID!).child("email").setValue(self.email.text)
                         self.performSegue(withIdentifier: "toMainScreen", sender: self)
                     }
                 })
@@ -136,6 +142,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
         
         // set firebase ref
         ref = Database.database().reference()
+<<<<<<< HEAD
         print("This is the ref variable \(ref!)")
         
 //        // check if the location service is available
@@ -155,6 +162,8 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
 //            print("no")
 //            self.displayAlert("Error", message: "Location Services not available!")
 //        }
+=======
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
     }
     
 //    override func viewWillAppear(_ animated: Bool) {

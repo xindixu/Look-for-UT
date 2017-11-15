@@ -11,7 +11,12 @@ import FirebaseDatabase
 import CoreLocation
 import MapKit
 
+<<<<<<< HEAD
 class FindDestinationViewController: UIViewController, CLLocationManagerDelegate {
+=======
+class FindDestinationViewController: UIViewController {
+    
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
     var ref: DatabaseReference!
     
     var questionList: [String] {
@@ -75,7 +80,12 @@ class FindDestinationViewController: UIViewController, CLLocationManagerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set database ref
         ref = Database.database().reference()
+        ref?.child("Game").observe(.childAdded, with: {(snapshot) in
+            // code to execute when a child is added under "Players"
+            
+        })
         runTimer()
         
         clue.text = clueList[currentQuestion]

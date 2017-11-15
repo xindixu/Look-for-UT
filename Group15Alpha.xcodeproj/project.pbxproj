@@ -13,6 +13,8 @@
 		084EC5EE1FA2587200CE305D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5ED1FA2587200CE305D /* LoginViewController.swift */; };
 		084EC5F01FA262B600CE305D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5EF1FA262B600CE305D /* MainTabBarController.swift */; };
 		084EC5F21FA2630000CE305D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5F11FA2630000CE305D /* User.swift */; };
+		085CCEF91FBA908D00E1F1BF /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085CCEF81FBA908D00E1F1BF /* CreateTeamViewController.swift */; };
+		085CCEFB1FBA911A00E1F1BF /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085CCEFA1FBA911A00E1F1BF /* JoinTeamViewController.swift */; };
 		08B7D08E1FA96F6100393D09 /* StartPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */; };
 		9D2AD0691FA93EA5003DFD9D /* AccountChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2AD0681FA93EA5003DFD9D /* AccountChangeViewController.swift */; };
 		9DCC47C81FA7B92D003B060B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC47C71FA7B92D003B060B /* SettingsViewController.swift */; };
@@ -53,6 +55,8 @@
 		084EC5ED1FA2587200CE305D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		084EC5EF1FA262B600CE305D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		084EC5F11FA2630000CE305D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		085CCEF81FBA908D00E1F1BF /* CreateTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
+		085CCEFA1FBA911A00E1F1BF /* JoinTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
 		08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPlayingViewController.swift; sourceTree = "<group>"; };
 		0C45A38E7F8195109074D644 /* Pods-Group15Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group15Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Group15Alpha/Pods-Group15Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		5EA327016ECF794D9D013BAB /* Pods_Group15Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group15Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,10 +158,15 @@
 				F38A6CE11F9EA2780012AE64 /* ViewController.swift */,
 				F38A6CE31F9EA2780012AE64 /* Main.storyboard */,
 				084EC5ED1FA2587200CE305D /* LoginViewController.swift */,
+<<<<<<< HEAD
+=======
+				085CCEFA1FBA911A00E1F1BF /* JoinTeamViewController.swift */,
+				085CCEF81FBA908D00E1F1BF /* CreateTeamViewController.swift */,
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
 				08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */,
+				9DF3EC921FA7E76C00A119F0 /* AccountTableViewController.swift */,
 				9D2AD0681FA93EA5003DFD9D /* AccountChangeViewController.swift */,
 				9DCC47C71FA7B92D003B060B /* SettingsViewController.swift */,
-				9DF3EC921FA7E76C00A119F0 /* AccountTableViewController.swift */,
 				9DCC47C91FA7B938003B060B /* TutorialViewController.swift */,
 				084EC5EF1FA262B600CE305D /* MainTabBarController.swift */,
 				084EC5F11FA2630000CE305D /* User.swift */,
@@ -260,6 +269,7 @@
 				TargetAttributes = {
 					F38A6CDB1F9EA2780012AE64 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = V2DTJ8Z834;
 						ProvisioningStyle = Automatic;
 					};
 					F38A6CEF1F9EA2780012AE64 = {
@@ -393,7 +403,9 @@
 				9DCC47CA1FA7B938003B060B /* TutorialViewController.swift in Sources */,
 				9DF3EC931FA7E76C00A119F0 /* AccountTableViewController.swift in Sources */,
 				F38A6CE01F9EA2780012AE64 /* AppDelegate.swift in Sources */,
+				085CCEFB1FBA911A00E1F1BF /* JoinTeamViewController.swift in Sources */,
 				08B7D08E1FA96F6100393D09 /* StartPlayingViewController.swift in Sources */,
+				085CCEF91FBA908D00E1F1BF /* CreateTeamViewController.swift in Sources */,
 				084EC5EE1FA2587200CE305D /* LoginViewController.swift in Sources */,
 				084EC5F01FA262B600CE305D /* MainTabBarController.swift in Sources */,
 				081F51061F9EDAD900297116 /* CongratsViewController.swift in Sources */,
@@ -554,6 +566,7 @@
 			baseConfigurationReference = 6065E4C64617590958DB0610 /* Pods-Group15Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V2DTJ8Z834;
 				INFOPLIST_FILE = Group15Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cs329e.Group15Alpha;
@@ -567,6 +580,7 @@
 			baseConfigurationReference = 0C45A38E7F8195109074D644 /* Pods-Group15Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V2DTJ8Z834;
 				INFOPLIST_FILE = Group15Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cs329e.Group15Alpha;
