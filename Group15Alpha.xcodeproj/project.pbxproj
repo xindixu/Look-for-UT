@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0806A4811FABFC5900A05E42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0806A4801FABFC5900A05E42 /* GoogleService-Info.plist */; };
+		080E39151FBBECDE00AB8F5B /* GamePrepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E39141FBBECDE00AB8F5B /* GamePrepViewController.swift */; };
+		080E39171FBC1D6D00AB8F5B /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E39161FBC1D6D00AB8F5B /* Puzzle.swift */; };
 		081F51041F9ECB4000297116 /* FindDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F51031F9ECB4000297116 /* FindDestinationViewController.swift */; };
 		081F51061F9EDAD900297116 /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F51051F9EDAD900297116 /* CongratsViewController.swift */; };
 		084EC5EE1FA2587200CE305D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5ED1FA2587200CE305D /* LoginViewController.swift */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		0806A4801FABFC5900A05E42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		080E39141FBBECDE00AB8F5B /* GamePrepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePrepViewController.swift; sourceTree = "<group>"; };
+		080E39161FBC1D6D00AB8F5B /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Puzzle.swift; path = Group15Alpha/Puzzle.swift; sourceTree = "<group>"; };
 		081F51031F9ECB4000297116 /* FindDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDestinationViewController.swift; sourceTree = "<group>"; };
 		081F51051F9EDAD900297116 /* CongratsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
 		084EC5ED1FA2587200CE305D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		F38A6CD31F9EA2780012AE64 = {
 			isa = PBXGroup;
 			children = (
+				080E39161FBC1D6D00AB8F5B /* Puzzle.swift */,
 				F38A6CDE1F9EA2780012AE64 /* Group15Alpha */,
 				F38A6CF31F9EA2780012AE64 /* Group15AlphaTests */,
 				F38A6CFE1F9EA2780012AE64 /* Group15AlphaUITests */,
@@ -157,6 +162,7 @@
 				F38A6CDF1F9EA2780012AE64 /* AppDelegate.swift */,
 				F38A6CE11F9EA2780012AE64 /* ViewController.swift */,
 				F38A6CE31F9EA2780012AE64 /* Main.storyboard */,
+				080E39141FBBECDE00AB8F5B /* GamePrepViewController.swift */,
 				084EC5ED1FA2587200CE305D /* LoginViewController.swift */,
 				085CCEFA1FBA911A00E1F1BF /* JoinTeamViewController.swift */,
 				085CCEF81FBA908D00E1F1BF /* CreateTeamViewController.swift */,
@@ -401,6 +407,8 @@
 				9DF3EC931FA7E76C00A119F0 /* AccountTableViewController.swift in Sources */,
 				F38A6CE01F9EA2780012AE64 /* AppDelegate.swift in Sources */,
 				085CCEFB1FBA911A00E1F1BF /* JoinTeamViewController.swift in Sources */,
+				080E39171FBC1D6D00AB8F5B /* Puzzle.swift in Sources */,
+				080E39151FBBECDE00AB8F5B /* GamePrepViewController.swift in Sources */,
 				08B7D08E1FA96F6100393D09 /* StartPlayingViewController.swift in Sources */,
 				085CCEF91FBA908D00E1F1BF /* CreateTeamViewController.swift in Sources */,
 				084EC5EE1FA2587200CE305D /* LoginViewController.swift in Sources */,

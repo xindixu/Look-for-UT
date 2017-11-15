@@ -367,14 +367,14 @@
                                 <rect key="frame" x="172" y="429" width="30" height="30"/>
                                 <state key="normal" title="Quit"/>
                                 <connections>
-                                    <segue destination="9OS-pv-ZBS" kind="show" id="kRe-2Z-MmQ"/>
+                                    <segue destination="yzd-XL-qZm" kind="show" id="4IE-r2-9j1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGM-PJ-9j3">
                                 <rect key="frame" x="172" y="389" width="30" height="30"/>
                                 <state key="normal" title="GO!"/>
                                 <connections>
-                                    <segue destination="TiA-v1-0Mf" kind="show" id="lfg-Th-LnX"/>
+                                    <segue destination="TiA-v1-0Mf" kind="show" id="ow7-SB-WwB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To invite your friends to join your team, please ask them to enter the code below:" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="4" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2O2-lg-B3b">
@@ -438,7 +438,7 @@
                                 <rect key="frame" x="172.5" y="433.5" width="30" height="30"/>
                                 <state key="normal" title="Quit"/>
                                 <connections>
-                                    <segue destination="yzd-XL-qZm" kind="show" id="WEL-lw-oW7"/>
+                                    <segue destination="yzd-XL-qZm" kind="show" id="2z0-v0-wZm"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8yx-kQ-G2G">
@@ -475,7 +475,7 @@
         <!--Get ready!-->
         <scene sceneID="oHw-ii-l36">
             <objects>
-                <viewController storyboardIdentifier="getReady" title="Get ready!" hidesBottomBarWhenPushed="YES" id="TiA-v1-0Mf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="getReady" title="Get ready!" hidesBottomBarWhenPushed="YES" id="TiA-v1-0Mf" customClass="GamePrepViewController" customModule="Group15Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5PI-75-Vxd"/>
                         <viewControllerLayoutGuide type="bottom" id="M7u-gt-YsV"/>
@@ -625,7 +625,7 @@
                     <connections>
                         <outlet property="answer" destination="giq-bD-4FX" id="rRn-db-D1k"/>
                         <outlet property="clue" destination="sd3-v0-DBc" id="J5J-Iz-0tW"/>
-                        <outlet property="question" destination="lL0-MI-cGU" id="a4p-1B-d29"/>
+                        <outlet property="geoPoint" destination="lL0-MI-cGU" id="GqB-hB-0s2"/>
                         <outlet property="timerL" destination="9jw-S9-psW" id="bmz-6v-K7d"/>
                     </connections>
                 </viewController>
@@ -741,7 +741,8 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="91Z-Oi-RV7"/>
-        <segue reference="WEL-lw-oW7"/>
+        <segue reference="Hqd-fL-khd"/>
+        <segue reference="nID-69-c5p"/>
+        <segue reference="4IE-r2-9j1"/>
     </inferredMetricsTieBreakers>
 </document>

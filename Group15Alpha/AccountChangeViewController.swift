@@ -17,10 +17,6 @@ class AccountChangeViewController: UIViewController {
     var databaseHandle: DatabaseReference!
     var users: [User] = []
     var settingNumber:Int?
-    
-    
-    
-    
 
     
     override func viewDidLoad() {
