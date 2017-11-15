@@ -7,18 +7,46 @@
 //
 
 import UIKit
+<<<<<<< HEAD
+import CoreLocation
+=======
 import FirebaseAuth
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
 
-class StartPlayingViewController: UIViewController {
+class StartPlayingViewController: UIViewController, CLLocationManagerDelegate {
 
+    // Location stuff
+    let locationManager = CLLocationManager()
+    var alertController: UIAlertController? = nil
     
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var currentPlayer: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
+        
+        // check if the location service is available
+        if CLLocationManager.locationServicesEnabled() {
+            print("yes")
+            // Configure the location manager for what we want to track.
+            //locationManager.desiredAccuracy = 100 // meters
+            //locationManager.delegate = self
+            // If user hasn't done so yet, we need to ask for access to the location data.
+            if CLLocationManager.authorizationStatus() == .notDetermined {
+                // Must choose between requesting to get access to location data, either always or only when the app is running.
+                locationManager.requestWhenInUseAuthorization()
+                //locationManager.requestAlwaysAuthorization()
+            }
+        }
+        else {
+            print("no")
+            self.displayAlert("Error", message: "Location Services not available!")
+        }
+=======
         currentPlayer.text = Auth.auth().currentUser?.email
         // Do any additional setup after loading the view.
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +54,15 @@ class StartPlayingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+<<<<<<< HEAD
+    func displayAlert(_ title:String, message:String) {
+        self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+        }
+        self.alertController!.addAction(okAction)
+        self.present(self.alertController!, animated: true, completion:nil)
+    }
+=======
     
     @IBAction func Signout(_ sender: Any) {
         let firebaseAuth = Auth.auth()
@@ -38,6 +75,7 @@ class StartPlayingViewController: UIViewController {
         }
     }
     
+>>>>>>> 7409474a51857e21314de684867b7943badc8f90
 
     /*
     // MARK: - Navigation
