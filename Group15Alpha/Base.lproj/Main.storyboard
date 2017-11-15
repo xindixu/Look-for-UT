@@ -475,7 +475,7 @@
         <!--Get ready!-->
         <scene sceneID="oHw-ii-l36">
             <objects>
-                <viewController storyboardIdentifier="getReady" title="Get ready!" hidesBottomBarWhenPushed="YES" id="TiA-v1-0Mf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="getReady" title="Get ready!" hidesBottomBarWhenPushed="YES" id="TiA-v1-0Mf" customClass="GamePrepViewController" customModule="Group15Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5PI-75-Vxd"/>
                         <viewControllerLayoutGuide type="bottom" id="M7u-gt-YsV"/>
@@ -741,7 +741,7 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="91Z-Oi-RV7"/>
+        <segue reference="nID-69-c5p"/>
         <segue reference="WEL-lw-oW7"/>
     </inferredMetricsTieBreakers>
 </document>
