@@ -158,11 +158,8 @@
 				F38A6CE11F9EA2780012AE64 /* ViewController.swift */,
 				F38A6CE31F9EA2780012AE64 /* Main.storyboard */,
 				084EC5ED1FA2587200CE305D /* LoginViewController.swift */,
-<<<<<<< HEAD
-=======
 				085CCEFA1FBA911A00E1F1BF /* JoinTeamViewController.swift */,
 				085CCEF81FBA908D00E1F1BF /* CreateTeamViewController.swift */,
->>>>>>> 7409474a51857e21314de684867b7943badc8f90
 				08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */,
 				9DF3EC921FA7E76C00A119F0 /* AccountTableViewController.swift */,
 				9D2AD0681FA93EA5003DFD9D /* AccountChangeViewController.swift */,

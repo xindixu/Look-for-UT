@@ -9,14 +9,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-import CoreLocation
 
-class LoginViewController: UIViewController, CLLocationManagerDelegate {
-    
-    // Location stuff
-    //let locationManager = CLLocationManager()
-    
-    // Database stuff
+class LoginViewController: UIViewController {
     var ref: DatabaseReference!
     var databaseHandle: DatabaseReference!
     var users: [User] = []
@@ -29,7 +23,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var button: UIButton!
     
-    var alertController: UIAlertController? = nil //what is this alert view for???
+    var alertController: UIAlertController? = nil
     
     @IBAction func switchBetween(_ sender: Any) {
         if self.option.selectedSegmentIndex == 0 {
@@ -119,87 +113,17 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        // check if the location service is available
-//        if CLLocationManager.locationServicesEnabled() {
-//            print("yes")
-//            // Configure the location manager for what we want to track.
-//            locationManager.desiredAccuracy = 100 // meters
-//            locationManager.delegate = self
-//            // If user hasn't done so yet, we need to ask for access to the location data.
-//            if CLLocationManager.authorizationStatus() == .notDetermined {
-//                // Must choose between requesting to get access to location data, either always or only when the app is running.
-//                locationManager.requestWhenInUseAuthorization()
-//                //locationManager.requestAlwaysAuthorization()
-//            }
-//        }
-//        else {
-//            print("no")
-//            self.displayAlert("Error", message: "Location Services not available!")
-//        }
-        
         username.alpha = 0
         
         // set firebase ref
         ref = Database.database().reference()
-<<<<<<< HEAD
-        print("This is the ref variable \(ref!)")
-        
-//        // check if the location service is available
-//        if CLLocationManager.locationServicesEnabled() {
-//            print("yes")
-//            // Configure the location manager for what we want to track.
-//            locationManager.desiredAccuracy = 100 // meters
-//            locationManager.delegate = self
-//            // If user hasn't done so yet, we need to ask for access to the location data.
-//            if CLLocationManager.authorizationStatus() == .notDetermined {
-//                // Must choose between requesting to get access to location data, either always or only when the app is running.
-//                locationManager.requestWhenInUseAuthorization()
-//                //locationManager.requestAlwaysAuthorization()
-//            }
-//        }
-//        else {
-//            print("no")
-//            self.displayAlert("Error", message: "Location Services not available!")
-//        }
-=======
->>>>>>> 7409474a51857e21314de684867b7943badc8f90
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        // check if the location service is available
-//        if CLLocationManager.locationServicesEnabled() {
-//            print("yes")
-//            // Configure the location manager for what we want to track.
-//            locationManager.desiredAccuracy = 100 // meters
-//            locationManager.delegate = self
-//            // If user hasn't done so yet, we need to ask for access to the location data.
-//            if CLLocationManager.authorizationStatus() == .notDetermined {
-//                // Must choose between requesting to get access to location data, either always or only when the app is running.
-//                locationManager.requestWhenInUseAuthorization()
-//                //locationManager.requestAlwaysAuthorization()
-//            }
-//        }
-//        else {
-//            print("no")
-//            self.displayAlert("Error", message: "Location Services not available!")
-//        }
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-//    func displayAlert(_ title:String, message:String) {
-//        self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
-//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-//        }
-//        self.alertController!.addAction(okAction)
-//        self.present(self.alertController!, animated: true, completion:nil)
-//    }
 
     /*
     // MARK: - Navigation
