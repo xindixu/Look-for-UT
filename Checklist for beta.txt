@@ -10,12 +10,11 @@ Beta checklist:
 
 3. MapKit
 
-4. Realtime creating & assigning teams - 
-	todo: avoid duplicate users? (Not necessary...)
+4. Realtime creating & assigning teams
 
 5. Sharing 
 
 6. Search/add friends
 
-
+7. 
 
