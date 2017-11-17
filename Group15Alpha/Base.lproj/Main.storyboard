@@ -633,6 +633,7 @@
                         <outlet property="answer" destination="giq-bD-4FX" id="rRn-db-D1k"/>
                         <outlet property="clue" destination="sd3-v0-DBc" id="J5J-Iz-0tW"/>
                         <outlet property="geoPoint" destination="lL0-MI-cGU" id="GqB-hB-0s2"/>
+                        <outlet property="map" destination="Ox8-P0-wJs" id="xsP-oZ-l6i"/>
                         <outlet property="timerL" destination="9jw-S9-psW" id="bmz-6v-K7d"/>
                     </connections>
                 </viewController>

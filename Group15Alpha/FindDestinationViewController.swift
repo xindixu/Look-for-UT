@@ -33,12 +33,12 @@ class FindDestinationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var clue: UILabel!
     @IBOutlet weak var geoPoint: UILabel!
     @IBOutlet weak var answer: UITextField!
+    @IBOutlet weak var map: MKMapView!
     
     var alertController: UIAlertController? = nil
     
     // map stuff
     let locationManager = CLLocationManager()
-    @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
