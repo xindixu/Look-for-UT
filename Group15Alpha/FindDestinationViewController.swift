@@ -137,6 +137,7 @@ class FindDestinationViewController: UIViewController, CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Make use of the CLLocation objects as desired.
         let currentLocation = locations[0]
+        print(currentLocation)
         let mySpan:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
         print(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
