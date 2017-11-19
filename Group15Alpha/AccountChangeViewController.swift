@@ -17,7 +17,10 @@ class AccountChangeViewController: UIViewController {
     var databaseHandle: DatabaseReference!
     var users: [User] = []
     var settingNumber:Int?
-
+    let currentUser = UILabel(frame: CGRect(x: 100, y: 100, width: 300, height: 30))
+    let userChange = UITextField(frame: CGRect(x:100, y:200, width: 300, height: 30))
+    let confirmChange = UIButton(frame: CGRect(x: 100, y: 300, width: 300, height: 30))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,27 +44,24 @@ class AccountChangeViewController: UIViewController {
             let value = snapshot.value as? NSDictionary
             let email = value?["email"] as? String ?? ""
             let username = value?["username"] as? String ?? ""
-        
-        
-        let currentUser = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 30))
-        currentUser.center = CGPoint(x:160, y:200)
-        currentUser.text = username
-        let promptChange = UITextField(frame: CGRect(x:100, y:200, width: 100, height: 30))
-        let confirmChange = UIButton(frame: CGRect(x: 100, y: 300, width: 200, height: 30))
-        confirmChange.setTitle("Make Change", for: .normal)
-            confirmChange.addTarget(self, action: #selector(self.confirmClicked), for: UIControlEvents.touchUpInside)
-        
-        
+            self.currentUser.text = username
+            self.confirmChange.setTitle("Make Change", for: .normal)
+            self.confirmChange.addTarget(self, action: #selector(self.confirmClicked), for: UIControlEvents.touchUpInside)
+            self.confirmChange.backgroundColor = .gray
+            self.userChange.backgroundColor = .yellow
             
             //Run this setup if change username is selected
             if(self.settingNumber == 0) {
-                print("value is \(username)")
-                currentUser.center = CGPoint(x:160, y:200)
-                confirmChange.backgroundColor = .gray
-                promptChange.backgroundColor = .blue
-                self.view.addSubview(currentUser)
-                self.view.addSubview(promptChange)
-                self.view.addSubview(confirmChange)
+                self.currentUser.text = "Username: \(username)"
+                self.view.addSubview(self.currentUser)
+                self.view.addSubview(self.userChange)
+                self.view.addSubview(self.confirmChange)
+            }
+            if(self.settingNumber == 2) {
+                self.currentUser.text = "Current Email is \(email)"
+                self.view.addSubview(self.currentUser)
+                self.view.addSubview(self.userChange)
+                self.view.addSubview(self.confirmChange)
             }
             
             //Run this setup if change password is selected
@@ -73,7 +73,29 @@ class AccountChangeViewController: UIViewController {
     }
     
     func confirmClicked(sender: UIButton!) {
+        let userID = Auth.auth().currentUser?.uid
+        let prntRef = Database.database().reference().child("Players").child(userID!);
+        print("Make Change is clicked")
+            if (self.settingNumber == 0){
+                prntRef.updateChildValues(["username": self.userChange.text! as NSString])
+            }
+            if (self.settingNumber == 2){
+                prntRef.updateChildValues(["email": self.userChange.text! as NSString])
+            }
         
+    
+        
+        //go back to profile page
+        
+        //create alert controller for confirmation
+        let alertController = UIAlertController(title: "Modification", message: "Change complete.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .default) {action in print("completed")}
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true)
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     /*

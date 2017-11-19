@@ -36,6 +36,7 @@ class JoinTeamViewController: UIViewController {
                         
                         // number of people in a team smaller than 5
                         // reject request of joining a team
+                        /*
                         if players.childrenCount < self.maxNumOfPlayer {
                             self.ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
                             let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "getReady")
@@ -44,6 +45,7 @@ class JoinTeamViewController: UIViewController {
                         else{
                             self.createAlert(title: "Error", message: "The team is full")
                         }
+ */
                     })
                 }
                 else{

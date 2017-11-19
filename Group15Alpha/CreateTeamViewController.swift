@@ -17,13 +17,13 @@ class CreateTeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let c = generateCode()
-        codeL.text! = c
+        //let c = generateCode()
+        //codeL.text! = c
         ref = Database.database().reference()
-        ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
+        //ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
         
         generatePuzzleIndex()
-        ref?.child("Games/\(c)/puzzleIndex").setValue(self.pIndex)
+        //ref?.child("Games/\(c)/puzzleIndex").setValue(self.pIndex)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +31,7 @@ class CreateTeamViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    /*
     func generateCode() -> String {
         let letters:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = letters.count
@@ -43,7 +43,7 @@ class CreateTeamViewController: UIViewController {
         }
         return randomString
     }
-
+*/
     
     func generatePuzzleIndex() {
         // add random 5 puzzles

@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class AccountTableViewController: UITableViewController {
 
-    private var funcNames:[String] = ["Change Username", "Change Password", "Leaderboards", "Check Records", "Coupons", "Edit Name, Gender, and Year", "Link Accounts" ]
+    private var funcNames:[String] = ["Change Username", "Change Password", "Change Email", "Check Records", "Coupons", "Edit Name, Gender, and Year", "Link Accounts" ]
 
     var ref: DatabaseReference!
     override func viewDidLoad() {
