@@ -75,15 +75,30 @@ class AccountChangeViewController: UIViewController {
     func confirmClicked(sender: UIButton!) {
         let userID = Auth.auth().currentUser?.uid
         let prntRef = Database.database().reference().child("Players").child(userID!);
-        print("Make Change is clicked")
+        print("Make Change is clicked \(self.settingNumber!)")
             if (self.settingNumber == 0){
                 prntRef.updateChildValues(["username": self.userChange.text! as NSString])
             }
+        
+            if (self.settingNumber == 1){
+                Auth.auth().currentUser?.updatePassword(to: userChange as! String) {
+                (error) in
+                }
+            }
             if (self.settingNumber == 2){
-                prntRef.updateChildValues(["email": self.userChange.text! as NSString])
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    let uid = user.uid
+                    let email = user.email
+                    print("uid is \(uid)")
+                    print("email is \(email!)")
+                }
+                
+                //Auth.auth().currentUser?.updateEmail(to: userChange as String) { (error) in
+                //}
+                
             }
         
-    
         
         //go back to profile page
         
@@ -95,7 +110,7 @@ class AccountChangeViewController: UIViewController {
         
         self.present(alertController, animated: true)
         
-        self.navigationController?.popToRootViewController(animated: true)
+        //self.navigationController?.popToRootViewController(animated: true)
     }
     
     /*
