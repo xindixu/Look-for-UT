@@ -485,7 +485,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="br7-AT-Ksb">
-                                <rect key="frame" x="54" y="318.5" width="267" height="30"/>
+                                <rect key="frame" x="54" y="468.5" width="267" height="30"/>
                                 <state key="normal" title="click start after everyone gets together"/>
                                 <connections>
                                     <segue destination="9nc-c9-HcC" kind="show" identifier="toGame" id="iJ0-DP-ROt"/>
@@ -512,10 +512,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;PlayerList&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDh-k1-iVG">
-                                <rect key="frame" x="87.5" y="217" width="200" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDh-k1-iVG">
+                                <rect key="frame" x="37.5" y="217" width="300" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="H8M-Im-2Mf"/>
+                                    <constraint firstAttribute="width" constant="300" id="H8M-Im-2Mf"/>
+                                    <constraint firstAttribute="height" constant="200" id="uGS-aE-7hb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -527,6 +528,7 @@
                             <constraint firstItem="br7-AT-Ksb" firstAttribute="centerX" secondItem="HRf-ZC-IZN" secondAttribute="centerX" id="3sI-8K-tjZ"/>
                             <constraint firstItem="Usp-Uq-Kje" firstAttribute="top" secondItem="cA5-mz-02x" secondAttribute="bottom" constant="45" id="4NN-QA-mot"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cA5-mz-02x" secondAttribute="trailing" constant="40" id="5Jf-Gd-XeV"/>
+                            <constraint firstItem="br7-AT-Ksb" firstAttribute="centerY" secondItem="HRf-ZC-IZN" secondAttribute="centerY" constant="150" id="H7z-3V-J4g"/>
                             <constraint firstItem="ZDh-k1-iVG" firstAttribute="centerX" secondItem="HRf-ZC-IZN" secondAttribute="centerX" id="LlF-oB-Ysc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KFv-zZ-crv" secondAttribute="trailing" constant="40" id="Pwr-gB-kcO"/>
                             <constraint firstItem="cA5-mz-02x" firstAttribute="leading" secondItem="HRf-ZC-IZN" secondAttribute="leadingMargin" constant="40" id="Ypi-7u-Gl2"/>
@@ -534,8 +536,7 @@
                             <constraint firstItem="Usp-Uq-Kje" firstAttribute="centerX" secondItem="HRf-ZC-IZN" secondAttribute="centerX" id="bTp-m3-6RE"/>
                             <constraint firstItem="ZDh-k1-iVG" firstAttribute="top" secondItem="Usp-Uq-Kje" secondAttribute="bottom" constant="10" id="cZw-mi-orA"/>
                             <constraint firstItem="cA5-mz-02x" firstAttribute="top" secondItem="5PI-75-Vxd" secondAttribute="bottom" constant="100" id="nAC-4W-tpx"/>
-                            <constraint firstItem="KFv-zZ-crv" firstAttribute="top" secondItem="br7-AT-Ksb" secondAttribute="bottom" constant="200" id="non-jY-eaC"/>
-                            <constraint firstItem="br7-AT-Ksb" firstAttribute="centerY" secondItem="HRf-ZC-IZN" secondAttribute="centerY" id="ys8-00-key"/>
+                            <constraint firstItem="KFv-zZ-crv" firstAttribute="top" secondItem="br7-AT-Ksb" secondAttribute="bottom" constant="50" id="non-jY-eaC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -771,7 +772,7 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tuz-FS-CXT"/>
-        <segue reference="4IE-r2-9j1"/>
+        <segue reference="nID-69-c5p"/>
+        <segue reference="2z0-v0-wZm"/>
     </inferredMetricsTieBreakers>
 </document>

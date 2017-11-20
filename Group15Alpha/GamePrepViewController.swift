@@ -18,8 +18,15 @@ class GamePrepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        ref?.child("Games/\(gameCode)/players").observe(.childAdded, with: { (players) in
-            print(players.childrenCount)
+        print("gameprepVC:  \(gameCode!)")
+        ref?.child("Games/\(gameCode!)/players").observe(.childAdded, with: { (players) in
+            let value = players.value as! String
+            self.ref?.child("Players/\(value)/username").observeSingleEvent(of: .value, with: { (username) in
+                let name = username.value as! String
+                self.playerList.text = "\(self.playerList.text!) \n\(name)"
+            })
+            
+            print("hahahah")
         })
     }
 
