@@ -14,7 +14,6 @@
 		081F51061F9EDAD900297116 /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F51051F9EDAD900297116 /* CongratsViewController.swift */; };
 		084EC5EE1FA2587200CE305D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5ED1FA2587200CE305D /* LoginViewController.swift */; };
 		084EC5F01FA262B600CE305D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5EF1FA262B600CE305D /* MainTabBarController.swift */; };
-		084EC5F21FA2630000CE305D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EC5F11FA2630000CE305D /* User.swift */; };
 		085CCEF91FBA908D00E1F1BF /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085CCEF81FBA908D00E1F1BF /* CreateTeamViewController.swift */; };
 		085CCEFB1FBA911A00E1F1BF /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085CCEFA1FBA911A00E1F1BF /* JoinTeamViewController.swift */; };
 		08B7D08E1FA96F6100393D09 /* StartPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */; };
@@ -58,7 +57,6 @@
 		081F51051F9EDAD900297116 /* CongratsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
 		084EC5ED1FA2587200CE305D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		084EC5EF1FA262B600CE305D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		084EC5F11FA2630000CE305D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		085CCEF81FBA908D00E1F1BF /* CreateTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
 		085CCEFA1FBA911A00E1F1BF /* JoinTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
 		08B7D08D1FA96F6100393D09 /* StartPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPlayingViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				9DCC47C71FA7B92D003B060B /* SettingsViewController.swift */,
 				9DCC47C91FA7B938003B060B /* TutorialViewController.swift */,
 				084EC5EF1FA262B600CE305D /* MainTabBarController.swift */,
-				084EC5F11FA2630000CE305D /* User.swift */,
 				081F51031F9ECB4000297116 /* FindDestinationViewController.swift */,
 				081F51051F9EDAD900297116 /* CongratsViewController.swift */,
 				F38A6CE61F9EA2780012AE64 /* Assets.xcassets */,
@@ -414,7 +411,6 @@
 				084EC5EE1FA2587200CE305D /* LoginViewController.swift in Sources */,
 				084EC5F01FA262B600CE305D /* MainTabBarController.swift in Sources */,
 				081F51061F9EDAD900297116 /* CongratsViewController.swift in Sources */,
-				084EC5F21FA2630000CE305D /* User.swift in Sources */,
 				9DCC47C81FA7B92D003B060B /* SettingsViewController.swift in Sources */,
 				9DCC47CF1FA7C246003B060B /* Group15Alpha.xcdatamodeld in Sources */,
 			);

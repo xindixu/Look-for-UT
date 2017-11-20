@@ -11,24 +11,13 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class AccountTableViewController: UITableViewController {
-
+    
     private var funcNames:[String] = ["Change Username", "Change Password", "Change Email", "Check Records", "Coupons", "Edit Name, Gender, and Year", "Link Accounts", "Delete Account"]
-
-    var ref: DatabaseReference!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.ref = Database.database().reference()
-        let userID = Auth.auth().currentUser?.uid
-        ref?.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let email = value?["email"] as? String ?? ""
-            let username = value?["username"] as? String ?? ""
-            self.title = username
-        }) {(error) in
-            print(error.localizedDescription)
-        }
-        
+        self.title = "Account Settings"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
