@@ -269,7 +269,6 @@
 				TargetAttributes = {
 					F38A6CDB1F9EA2780012AE64 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = V2DTJ8Z834;
 						ProvisioningStyle = Automatic;
 					};
 					F38A6CEF1F9EA2780012AE64 = {
@@ -567,7 +566,7 @@
 			baseConfigurationReference = 6065E4C64617590958DB0610 /* Pods-Group15Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V2DTJ8Z834;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Group15Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cs329e.Group15Alpha;
@@ -581,7 +580,7 @@
 			baseConfigurationReference = 0C45A38E7F8195109074D644 /* Pods-Group15Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V2DTJ8Z834;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Group15Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cs329e.Group15Alpha;
