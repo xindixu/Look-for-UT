@@ -83,8 +83,10 @@ class JoinTeamViewController: UIViewController {
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let newVC = segue.destination as! GamePrepViewController
-        newVC.gameCode = codeTF.text!.uppercased()
+        if segue.identifier == "toGame"{
+            let newVC = segue.destination as! GamePrepViewController
+            newVC.gameCode = codeTF.text!.uppercased()
+        }
     }
     
 

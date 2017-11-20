@@ -488,7 +488,7 @@
                                 <rect key="frame" x="54" y="318.5" width="267" height="30"/>
                                 <state key="normal" title="click start after everyone gets together"/>
                                 <connections>
-                                    <segue destination="9nc-c9-HcC" kind="show" id="iJ0-DP-ROt"/>
+                                    <segue destination="9nc-c9-HcC" kind="show" identifier="toGame" id="iJ0-DP-ROt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFv-zZ-crv">
@@ -763,7 +763,8 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nID-69-c5p"/>
+        <segue reference="iJ0-DP-ROt"/>
+        <segue reference="tuz-FS-CXT"/>
         <segue reference="zCI-ub-SPk"/>
     </inferredMetricsTieBreakers>
 </document>
