@@ -7,17 +7,30 @@
 //
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class StartPlayingViewController: UIViewController {
     
-    
+    var ref: DatabaseReference?
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var currentPlayer: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         currentPlayer.text = Auth.auth().currentUser?.email
         // Do any additional setup after loading the view.
+        
+        let userID = Auth.auth().currentUser?.uid
+        ref?.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let email = value?["email"] as? String ?? ""
+            let username = value?["username"] as? String ?? ""
+            self.title = username
+        }) {(error) in
+            print(error.localizedDescription)
+        }
+
     }
     
     override func didReceiveMemoryWarning() {

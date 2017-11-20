@@ -15,7 +15,7 @@ class JoinTeamViewController: UIViewController {
     @IBOutlet weak var codeTF: UITextField!
     var ref:DatabaseReference?
     let maxNumOfPlayer = 5
-    
+    /*
     @IBAction func joinATeam(_ sender: Any) {
         let c = codeTF.text!.uppercased()
         // no value entered
@@ -58,7 +58,7 @@ class JoinTeamViewController: UIViewController {
             })
         }
     }
- 
+ */
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()

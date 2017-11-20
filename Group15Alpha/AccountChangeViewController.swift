@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class AccountChangeViewController: UIViewController, UITextFieldDelegate {
 
+    private var funcNames:[String] = ["Change Username", "Change Password", "Change Email", "Check Records", "Coupons", "Edit Name, Gender, and Year", "Link Accounts", "Delete Account"]
+    
     var functionCall:String?
     var ref: DatabaseReference?
     var databaseHandle: DatabaseReference!
@@ -27,7 +29,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         ref = Database.database().reference()
         self.userChange.delegate = self;
         promptChange()
-
+        self.title = self.funcNames[self.settingNumber!]
         // Do any additional setup after loading the view.
     }
 
