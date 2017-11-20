@@ -1,21 +1,17 @@
 Beta checklist:
 
-1. Authentication:
-	a. Login/register w/ email -
-	b. Login/register w/ Facebook & other social media
+1. Merge map Kit
 
-2. Account info & settings:
-	a. Interface building
-	b. Store info into user w/ firebase
+2. UI Design
 
-3. MapKit
+3. Implement Player Updates pre-game
 
-4. Realtime creating & assigning teams - 
-	todo: avoid duplicate users? (Not necessary...)
+4. Track Geopoint
 
-5. Sharing 
+5. Implement Gender, Name, Year, Major
 
-6. Search/add friends
+6. Take off Settings
+
 
 
 

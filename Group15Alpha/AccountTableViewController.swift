@@ -16,7 +16,7 @@ class AccountTableViewController: UITableViewController {
     var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Account Details"
+        self.title = "Account Settings"
         self.ref = Database.database().reference()
 
         // Uncomment the following line to preserve selection between presentations
