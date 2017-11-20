@@ -19,7 +19,7 @@ class CreateTeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //gameCode = generateCode() as NSString
+        gameCode = generateCode() as NSString
         codeL.text! = gameCode as String
         
         ref = Database.database().reference()
