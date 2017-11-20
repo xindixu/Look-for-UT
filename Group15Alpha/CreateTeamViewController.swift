@@ -19,7 +19,7 @@ class CreateTeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //gameCode = generateCode() as NSString
+        gameCode = generateCode() as NSString
         codeL.text! = gameCode as String
         
         ref = Database.database().reference()
@@ -40,7 +40,7 @@ class CreateTeamViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     func generateCode() -> String {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = letters.count
@@ -52,7 +52,7 @@ class CreateTeamViewController: UIViewController {
         }
         return randomString
     }
-    */
+    
     
     func generatePuzzleIndex() {
         // add random 5 puzzles
@@ -73,14 +73,14 @@ class CreateTeamViewController: UIViewController {
         }
     }
     
-    /*
+    
      // MARK: - Navigation
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     let newVC = segue.destination as! GamePrepViewController
-     newVC.temp = self.pIndex
+         let newVC = segue.destination as! GamePrepViewController
+         newVC.gameCode = self.gameCode as! String
      }
-     */
+    
     
 }
 

@@ -17,7 +17,6 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
     var databaseHandle: DatabaseReference!
     var users: [User] = []
     var settingNumber:Int?
-    private var funcNames:[String] = ["Change Username", "Change Password", "Change Email", "Check Records", "Coupons", "Edit Name, Gender, and Year", "Link Accounts", "Delete Account"]
     let displayInfo = UILabel(frame: CGRect(x: 100, y: 100, width: 300, height: 30))
     let userChange = UITextField(frame: CGRect(x:100, y:200, width: 300, height: 30))
     let confirmChange = UIButton(frame: CGRect(x: 100, y: 300, width: 300, height: 30))
@@ -28,7 +27,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         ref = Database.database().reference()
         self.userChange.delegate = self;
         promptChange()
-        self.title = self.funcNames[self.settingNumber!]
+
         // Do any additional setup after loading the view.
     }
 

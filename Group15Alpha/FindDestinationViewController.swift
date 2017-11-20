@@ -9,10 +9,8 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
-import MapKit
-import CoreLocation
 
-class FindDestinationViewController: UIViewController,CLLocationManagerDelegate {
+class FindDestinationViewController: UIViewController {
     
     var ref: DatabaseReference!
     var gamesRef: DatabaseReference!
@@ -26,10 +24,6 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     var currentQuestion = 1
     var correctAnswer = ""
     
-    // map stuff
-    let locationManager = CLLocationManager()
-    
-    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var timerL: UILabel!
     @IBOutlet weak var clue: UILabel!
     @IBOutlet weak var geoPoint: UILabel!
@@ -46,18 +40,6 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         
         updateQuestion()
         runTimer()
-        
-        // check if the location service is available
-        if !CLLocationManager.locationServicesEnabled() {
-            displayLocationAlert("Error", message: "You need to enable location services to play Look For UT! (Settings->Privacy->Location Services)")
-        }
-        else {
-            // Configure the location manager for what we want to track
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = 100 // meters
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,7 +56,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         _ = self.userRef.observe(.value, with: { (user) in
             
             let value = user.value as! [String:Any]
-            let gameCode = value["gameCode"] as? String
+            let gameCode = value["gameCode"] as! String
             
             // if user is the creator
             if user.hasChild("puzzleCode"){
@@ -170,30 +152,6 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         
     }
     
-    // start of map&location functions
-    
-    func displayLocationAlert(_ title:String, message:String) {
-        let alert = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in }
-        alert.addAction(okAction)
-        
-        self.present(alert, animated: true, completion:nil)
-    }
-    
-    // Called every time our user's location is updated
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // Make use of the CLLocation objects as desired.
-        let currentLocation = locations[0]
-        let mySpan:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.00)
-        print(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
-        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
-        let myRegion:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, mySpan)
-        map.setRegion(myRegion, animated: true)
-        self.map.showsUserLocation = true
-    }
-    
-    // end of map&location functions
     
     /*
      // MARK: - Navigation

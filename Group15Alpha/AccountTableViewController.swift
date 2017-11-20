@@ -8,16 +8,17 @@
 
 import UIKit
 import FirebaseDatabase
-import FirebaseAuth
 
 class AccountTableViewController: UITableViewController {
-    
+
     private var funcNames:[String] = ["Change Username", "Change Password", "Change Email", "Check Records", "Coupons", "Edit Name, Gender, and Year", "Link Accounts", "Delete Account"]
-    
-    
+
+    var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Account Settings"
+        self.title = "Account Details"
+        self.ref = Database.database().reference()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

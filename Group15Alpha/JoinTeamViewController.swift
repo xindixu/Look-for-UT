@@ -15,7 +15,7 @@ class JoinTeamViewController: UIViewController {
     @IBOutlet weak var codeTF: UITextField!
     var ref:DatabaseReference?
     let maxNumOfPlayer = 5
-    /*
+    
     @IBAction func joinATeam(_ sender: Any) {
         let c = codeTF.text!.uppercased()
         // no value entered
@@ -58,7 +58,7 @@ class JoinTeamViewController: UIViewController {
             })
         }
     }
- */
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -79,14 +79,13 @@ class JoinTeamViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    /*
+    
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let newVC = segue.destination as! GamePrepViewController
+        newVC.gameCode = codeTF.text!.uppercased()
     }
-    */
+    
 
 }
