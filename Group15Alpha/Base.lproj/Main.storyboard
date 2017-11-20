@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -169,7 +169,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rgC-gS-uof">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -593,6 +593,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ox8-P0-wJs">
+                                <rect key="frame" x="16" y="435" width="343" height="212"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -600,6 +603,8 @@
                             <constraint firstItem="giq-bD-4FX" firstAttribute="top" secondItem="haL-Zs-zga" secondAttribute="bottom" constant="15" id="7TL-jO-j7O"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lL0-MI-cGU" secondAttribute="trailing" constant="40" id="9Qa-kl-6sr"/>
                             <constraint firstItem="haL-Zs-zga" firstAttribute="top" secondItem="lL0-MI-cGU" secondAttribute="bottom" constant="15" id="9nZ-NR-2sx"/>
+                            <constraint firstItem="9Wm-ix-C0G" firstAttribute="top" secondItem="Ox8-P0-wJs" secondAttribute="bottom" constant="20" id="GGe-13-J8C"/>
+                            <constraint firstItem="Ox8-P0-wJs" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leading" constant="16" id="GVP-ll-6Fb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="giq-bD-4FX" secondAttribute="trailing" constant="123" id="Ish-38-ep1"/>
                             <constraint firstItem="giq-bD-4FX" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="123" id="LRx-Ev-OlL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sd3-v0-DBc" secondAttribute="trailing" constant="40" id="Npy-sK-xjA"/>
@@ -607,12 +612,14 @@
                             <constraint firstItem="GWS-eE-Ca1" firstAttribute="top" secondItem="nbT-WB-Vcw" secondAttribute="bottom" constant="15" id="TwK-i8-MkV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="haL-Zs-zga" secondAttribute="trailing" constant="40" id="YiT-oQ-GIZ"/>
                             <constraint firstItem="9jw-S9-psW" firstAttribute="top" secondItem="SfF-fU-kX0" secondAttribute="bottom" constant="20" id="Zxj-qf-3Vc"/>
+                            <constraint firstItem="Ox8-P0-wJs" firstAttribute="top" secondItem="GWS-eE-Ca1" secondAttribute="bottom" constant="21" id="aBg-pJ-nxg"/>
                             <constraint firstItem="lL0-MI-cGU" firstAttribute="top" secondItem="sd3-v0-DBc" secondAttribute="bottom" constant="15" id="d3z-df-aDO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9jw-S9-psW" secondAttribute="trailing" constant="40" id="dr3-G2-BMY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nbT-WB-Vcw" secondAttribute="trailing" constant="144" id="ggx-yR-BBW"/>
                             <constraint firstItem="GWS-eE-Ca1" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="40" id="jLi-Bc-a2y"/>
                             <constraint firstAttribute="trailing" secondItem="SfF-fU-kX0" secondAttribute="trailing" id="jWn-JU-aJc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GWS-eE-Ca1" secondAttribute="trailing" constant="40" id="lmo-MP-AES"/>
+                            <constraint firstAttribute="trailing" secondItem="Ox8-P0-wJs" secondAttribute="trailing" constant="16" id="nSg-JU-zv9"/>
                             <constraint firstItem="9jw-S9-psW" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="40" id="nbp-sB-71u"/>
                             <constraint firstItem="sd3-v0-DBc" firstAttribute="top" secondItem="9jw-S9-psW" secondAttribute="bottom" constant="15" id="r75-JG-lKv"/>
                             <constraint firstItem="SfF-fU-kX0" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leading" id="sEc-5P-Fxv"/>
@@ -626,12 +633,13 @@
                         <outlet property="answer" destination="giq-bD-4FX" id="rRn-db-D1k"/>
                         <outlet property="clue" destination="sd3-v0-DBc" id="J5J-Iz-0tW"/>
                         <outlet property="geoPoint" destination="lL0-MI-cGU" id="GqB-hB-0s2"/>
+                        <outlet property="map" destination="Ox8-P0-wJs" id="xsP-oZ-l6i"/>
                         <outlet property="timerL" destination="9jw-S9-psW" id="bmz-6v-K7d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4I-Q7-1sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6508" y="-391"/>
+            <point key="canvasLocation" x="6508" y="-391.75412293853077"/>
         </scene>
         <!--Congrats-->
         <scene sceneID="Jah-C1-SVa">
@@ -741,8 +749,7 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hqd-fL-khd"/>
-        <segue reference="nID-69-c5p"/>
-        <segue reference="4IE-r2-9j1"/>
+        <segue reference="zCI-ub-SPk"/>
+        <segue reference="8J2-3U-v5s"/>
     </inferredMetricsTieBreakers>
 </document>
