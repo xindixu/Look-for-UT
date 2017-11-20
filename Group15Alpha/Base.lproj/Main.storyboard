@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -169,7 +169,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rgC-gS-uof">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -593,17 +593,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gdY-wY-fM5">
+                                <rect key="frame" x="16" y="434" width="343" height="213"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="haL-Zs-zga" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="40" id="0R6-Ow-mWA"/>
                             <constraint firstItem="giq-bD-4FX" firstAttribute="top" secondItem="haL-Zs-zga" secondAttribute="bottom" constant="15" id="7TL-jO-j7O"/>
+                            <constraint firstItem="gdY-wY-fM5" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leading" constant="16" id="9Ou-pN-MAZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lL0-MI-cGU" secondAttribute="trailing" constant="40" id="9Qa-kl-6sr"/>
                             <constraint firstItem="haL-Zs-zga" firstAttribute="top" secondItem="lL0-MI-cGU" secondAttribute="bottom" constant="15" id="9nZ-NR-2sx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="giq-bD-4FX" secondAttribute="trailing" constant="123" id="Ish-38-ep1"/>
                             <constraint firstItem="giq-bD-4FX" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="123" id="LRx-Ev-OlL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sd3-v0-DBc" secondAttribute="trailing" constant="40" id="Npy-sK-xjA"/>
                             <constraint firstItem="nbT-WB-Vcw" firstAttribute="top" secondItem="giq-bD-4FX" secondAttribute="bottom" constant="15" id="QGJ-yV-lZI"/>
+                            <constraint firstItem="9Wm-ix-C0G" firstAttribute="top" secondItem="gdY-wY-fM5" secondAttribute="bottom" constant="20" id="QwE-Dw-ywm"/>
                             <constraint firstItem="GWS-eE-Ca1" firstAttribute="top" secondItem="nbT-WB-Vcw" secondAttribute="bottom" constant="15" id="TwK-i8-MkV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="haL-Zs-zga" secondAttribute="trailing" constant="40" id="YiT-oQ-GIZ"/>
                             <constraint firstItem="9jw-S9-psW" firstAttribute="top" secondItem="SfF-fU-kX0" secondAttribute="bottom" constant="20" id="Zxj-qf-3Vc"/>
@@ -616,16 +621,19 @@
                             <constraint firstItem="9jw-S9-psW" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="40" id="nbp-sB-71u"/>
                             <constraint firstItem="sd3-v0-DBc" firstAttribute="top" secondItem="9jw-S9-psW" secondAttribute="bottom" constant="15" id="r75-JG-lKv"/>
                             <constraint firstItem="SfF-fU-kX0" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leading" id="sEc-5P-Fxv"/>
+                            <constraint firstItem="gdY-wY-fM5" firstAttribute="top" secondItem="GWS-eE-Ca1" secondAttribute="bottom" constant="20" id="tSb-k5-o89"/>
                             <constraint firstItem="SfF-fU-kX0" firstAttribute="top" secondItem="6SL-1g-T6X" secondAttribute="top" constant="10" id="up6-IK-6T4"/>
                             <constraint firstItem="sd3-v0-DBc" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="40" id="vfm-JE-mpG"/>
                             <constraint firstItem="nbT-WB-Vcw" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="144" id="xdQ-h3-Kek"/>
                             <constraint firstItem="lL0-MI-cGU" firstAttribute="leading" secondItem="6SL-1g-T6X" secondAttribute="leadingMargin" constant="40" id="xm4-Yh-KrB"/>
+                            <constraint firstAttribute="trailing" secondItem="gdY-wY-fM5" secondAttribute="trailing" constant="16" id="y6l-I6-tf7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="answer" destination="giq-bD-4FX" id="rRn-db-D1k"/>
                         <outlet property="clue" destination="sd3-v0-DBc" id="J5J-Iz-0tW"/>
                         <outlet property="geoPoint" destination="lL0-MI-cGU" id="GqB-hB-0s2"/>
+                        <outlet property="map" destination="gdY-wY-fM5" id="0S7-aP-P2o"/>
                         <outlet property="timerL" destination="9jw-S9-psW" id="bmz-6v-K7d"/>
                     </connections>
                 </viewController>
@@ -741,7 +749,8 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tuz-FS-CXT"/>
+        <segue reference="Hqd-fL-khd"/>
+        <segue reference="91Z-Oi-RV7"/>
         <segue reference="zCI-ub-SPk"/>
     </inferredMetricsTieBreakers>
 </document>
