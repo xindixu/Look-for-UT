@@ -8,39 +8,17 @@
 
 import UIKit
 import FirebaseAuth
-import CoreLocation
 
-class StartPlayingViewController: UIViewController, CLLocationManagerDelegate {
+class StartPlayingViewController: UIViewController {
 
     
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var currentPlayer: UILabel!
     
-    // Location stuff
-    let locationManager = CLLocationManager()
-    var alertController: UIAlertController? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentPlayer.text = Auth.auth().currentUser?.email
-        
-        // check if the location service is available
-        if CLLocationManager.locationServicesEnabled() {
-            print("yes")
-            // Configure the location manager for what we want to track.
-            //locationManager.desiredAccuracy = 100 // meters
-            //locationManager.delegate = self
-            // If user hasn't done so yet, we need to ask for access to the location data.
-            if CLLocationManager.authorizationStatus() == .notDetermined {
-                // Must choose between requesting to get access to location data, either always or only when the app is running.
-                locationManager.requestWhenInUseAuthorization()
-                //locationManager.requestAlwaysAuthorization()
-            }
-        }
-        else {
-            print("no")
-            self.displayAlert("Error", message: "Location Services not available!")
-        }
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,13 +38,6 @@ class StartPlayingViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func displayAlert(_ title:String, message:String) {
-        self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-        }
-        self.alertController!.addAction(okAction)
-        self.present(self.alertController!, animated: true, completion:nil)
-    }
 
     /*
     // MARK: - Navigation

@@ -56,6 +56,7 @@ class LoginViewController: UIViewController {
             let userID = Auth.auth().currentUser?.uid
             
             if let e = email.text, let p = password.text {
+                print("password is \(p)")
                 Auth.auth().signIn(withEmail: e, password: p, completion: {(user, error) in
                     if error != nil {
                         print(error?.localizedDescription)

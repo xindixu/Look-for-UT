@@ -10,7 +10,6 @@ import UIKit
 
 class GamePrepViewController: UIViewController {
     
-    var temp: [Int]?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,7 +19,7 @@ class GamePrepViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -28,6 +27,6 @@ class GamePrepViewController: UIViewController {
         let newVC = segue.destination as! FindDestinationViewController
         newVC.pIndex = self.temp
     }
-    
+    */
 
 }
