@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class AccountTableViewController: UITableViewController {
 
@@ -16,9 +17,18 @@ class AccountTableViewController: UITableViewController {
     var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Account Details"
+        
         self.ref = Database.database().reference()
-
+        let userID = Auth.auth().currentUser?.uid
+        ref?.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let email = value?["email"] as? String ?? ""
+            let username = value?["username"] as? String ?? ""
+            self.title = username
+        }) {(error) in
+            print(error.localizedDescription)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
