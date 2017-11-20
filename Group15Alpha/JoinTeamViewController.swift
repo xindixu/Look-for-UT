@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+
 class JoinTeamViewController: UIViewController {
     
     @IBOutlet weak var codeTF: UITextField!
@@ -36,16 +37,18 @@ class JoinTeamViewController: UIViewController {
                         
                         // number of people in a team smaller than 5
                         // reject request of joining a team
-                        /*
                         if players.childrenCount < self.maxNumOfPlayer {
+                            
                             self.ref?.child("Games/\(c)/players").childByAutoId().setValue(Auth.auth().currentUser?.uid)
+                            let userID = Auth.auth().currentUser?.uid
+                            let gameCode = c as! NSString
+                            self.ref?.child("Players/\(userID!)/gameCode").setValue(gameCode)
                             let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "getReady")
                             self.present(viewcontroller!, animated: true, completion: nil)
                         }
                         else{
                             self.createAlert(title: "Error", message: "The team is full")
                         }
- */
                     })
                 }
                 else{

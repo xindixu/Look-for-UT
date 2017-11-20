@@ -134,7 +134,10 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         //create alert controller for confirmation
         let alertController = UIAlertController(title: "Modification", message: "Change complete.", preferredStyle: UIAlertControllerStyle.alert)
         
-        let OKAction = UIAlertAction(title: "OK", style: .default) {action in print("completed")}
+        let OKAction = UIAlertAction(title: "OK", style: .default) {action in
+            self.navigationController?.popToRootViewController(animated: true)
+            print("completed")
+        }
         alertController.addAction(OKAction)
         
         self.present(alertController, animated: true)
