@@ -20,7 +20,7 @@ class CreateTeamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    //    gameCode = generateCode() as NSString
+        gameCode = generateCode() as NSString
         codeL.text! = gameCode as String
         
         ref = Database.database().reference()
@@ -40,7 +40,7 @@ class CreateTeamViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
+    
     
     func generateCode() -> String {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -53,7 +53,7 @@ class CreateTeamViewController: UIViewController {
         }
         return randomString
     }
-    */
+    
     
     func generatePuzzleIndex() {
         // add random 5 puzzles
