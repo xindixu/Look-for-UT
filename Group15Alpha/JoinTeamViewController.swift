@@ -15,7 +15,7 @@ class JoinTeamViewController: UIViewController {
     @IBOutlet weak var codeTF: UITextField!
     var ref:DatabaseReference?
     let maxNumOfPlayer = 5
-    /*
+    
     @IBAction func joinATeam(_ sender: Any) {
         let c = codeTF.text!.uppercased()
         // no value entered
@@ -43,9 +43,9 @@ class JoinTeamViewController: UIViewController {
                             let userID = Auth.auth().currentUser?.uid
                             let gameCode = c as! NSString
                             self.ref?.child("Players/\(userID!)/gameCode").setValue(gameCode)
-                            let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "getReady")  as! GamePrepViewController
-                            viewcontroller.gameCode = self.codeTF.text!.uppercased()
-                            self.present(viewcontroller, animated: true, completion: nil)
+                            let viewController = self.storyboard?.instantiateViewController(withIdentifier: "getReady")  as! GamePrepViewController
+                            viewController.gameCode = self.codeTF.text!.uppercased()
+                            self.present(viewController, animated: true, completion: nil)
                         }
                         else{
                             self.createAlert(title: "Error", message: "The team is full")
@@ -59,7 +59,7 @@ class JoinTeamViewController: UIViewController {
             })
         }
     }
- */
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -80,17 +80,6 @@ class JoinTeamViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toGame"{
-            print(codeTF.text!.uppercased())
-            let newVC = segue.destination as! GamePrepViewController
-            newVC.gameCode = codeTF.text!.uppercased()
-            print(newVC.gameCode)
-        }
-    }
-    */
+    
 
 }

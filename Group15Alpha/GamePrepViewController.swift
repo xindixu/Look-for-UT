@@ -21,11 +21,10 @@ class GamePrepViewController: UIViewController {
         print("gameprepVC:  \(gameCode!)")
         ref?.child("Games/\(gameCode!)/players").observe(.childAdded, with: { (players) in
             let value = players.value as! String
-            self.ref?.child("Players/\(value)/username").observeSingleEvent(of: .value, with: { (username) in
+            self.ref?.child("Players/\(value)/username").observeSingleEvent(of: .childAdded, with: { (username) in
                 let name = username.value as! String
-                self.playerList.text = "\(self.playerList.text!) \n\(name)"
+                self.playerList.text = "\(self.playerList.text!)\(name)"
             })
-            
             print("hahahah")
         })
     }
