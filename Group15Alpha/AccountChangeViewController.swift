@@ -19,10 +19,11 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
     var databaseHandle: DatabaseReference!
     var users: [User] = []
     var settingNumber:Int?
-    let displayInfo = UILabel(frame: CGRect(x: 100, y: 100, width: 300, height: 30))
-    var userChange = UITextField(frame: CGRect(x:100, y:200, width: 300, height: 30))
-    let confirmChange = UIButton(frame: CGRect(x: 100, y: 300, width: 300, height: 30))
     
+    @IBOutlet weak var displayInfo: UILabel!
+    @IBOutlet weak var userChange: UITextField!
+    
+    @IBOutlet weak var confirmChangeText: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +51,6 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
             let email = value?["email"] as? String ?? ""
             let username = value?["username"] as? String ?? ""
             
-            self.confirmChange.setTitle("Make Change", for: .normal)
-            self.confirmChange.addTarget(self, action: #selector(self.confirmClicked), for: UIControlEvents.touchUpInside)
-            self.confirmChange.backgroundColor = .gray
-            self.userChange.backgroundColor = .yellow
-            
             //Run this setup if change username is selected
             if(self.settingNumber == 0) {
                 self.displayInfo.text = "Username: \(username)"
@@ -80,7 +76,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 let segmentedVC = UISegmentedControl(items: ["Male", "Female", "Fabulous"])
                 segmentedVC.frame = CGRect(x: 50, y: 200, width: 300, height: 30)
                 segmentedVC.selectedSegmentIndex = 0
-                
+                self.userChange.isHidden = true
                 segmentedVC.addTarget(self, action: "segmentedControlValueChanged:", for:.touchUpInside)
                 self.view.addSubview(segmentedVC)
                 self.userChange.frame.origin = CGPoint(x:-500, y: -100)
@@ -89,13 +85,14 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
             
             if(self.settingNumber == 5){
                 self.displayInfo.text = "Add your Year"
+                self.userChange.isHidden = true
             }
             
             if(self.settingNumber == 6) {
                 self.displayInfo.text = "Delete Account"
-                self.confirmChange.setTitle("Click here to delete account", for: .normal)
-                self.confirmChange.backgroundColor = .red
-                
+                self.confirmChangeText.setTitle("Click here to delete account", for: .normal)
+                self.confirmChangeText.backgroundColor = .red
+                self.userChange.isHidden = true
                 //Alert Controller Warning for Deletetion
                 let alertController = UIAlertController(title: "WARNING", message: "Are you sure you want to delete Account? You will not be able to retrieve this data again", preferredStyle: UIAlertControllerStyle.alert)
                 
@@ -109,17 +106,16 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
             }
             
             //Display subviews
-            self.view.addSubview(self.displayInfo)
-            self.view.addSubview(self.userChange)
-            self.view.addSubview(self.confirmChange)
             
         }) {(error) in
             print(error.localizedDescription)
         }
     }
     
+    @IBAction func confirmChange(_ sender: Any) {
     
-    func confirmClicked(sender: UIButton!) {
+    
+    //func confirmClicked(sender: UIButton!) {
         let userID = Auth.auth().currentUser?.uid
         let prntRef = Database.database().reference().child("Players").child(userID!);
         print("Make Change is clicked \(self.settingNumber!)")

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,12 +107,51 @@
                     <view key="view" contentMode="scaleToFill" id="7Qg-Vp-LyS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-Fw-0hR">
+                                <rect key="frame" x="56" y="198" width="263" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIq-8g-dcT">
+                                <rect key="frame" x="31" y="318.5" width="313" height="30"/>
+                                <color key="backgroundColor" red="0.65212638021037672" green="0.89975176716870087" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5D-8R-hx2">
+                                <rect key="frame" x="56" y="423.5" width="263" height="30"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmChange:" destination="6Gk-o2-Iem" eventType="touchUpInside" id="Xh1-Uw-HzJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XIq-8g-dcT" firstAttribute="top" secondItem="ugd-Fw-0hR" secondAttribute="bottom" constant="100" id="0Z3-VE-uJs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XIq-8g-dcT" secondAttribute="trailing" constant="15" id="5A2-Hk-2Sk"/>
+                            <constraint firstItem="D5D-8R-hx2" firstAttribute="leading" secondItem="7Qg-Vp-LyS" secondAttribute="leadingMargin" constant="40" id="Lp7-GZ-zWi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D5D-8R-hx2" secondAttribute="trailing" constant="40" id="WlP-s7-NX2"/>
+                            <constraint firstItem="D5D-8R-hx2" firstAttribute="top" secondItem="XIq-8g-dcT" secondAttribute="bottom" constant="75" id="WtY-jp-kiH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ugd-Fw-0hR" secondAttribute="trailing" constant="40" id="X6N-OP-p8S"/>
+                            <constraint firstItem="XIq-8g-dcT" firstAttribute="centerY" secondItem="7Qg-Vp-LyS" secondAttribute="centerY" id="d2c-h3-uv0"/>
+                            <constraint firstItem="XIq-8g-dcT" firstAttribute="leading" secondItem="7Qg-Vp-LyS" secondAttribute="leadingMargin" constant="15" id="l5D-ST-uFy"/>
+                            <constraint firstItem="XIq-8g-dcT" firstAttribute="centerX" secondItem="7Qg-Vp-LyS" secondAttribute="centerX" id="uV9-Q3-PFX"/>
+                            <constraint firstItem="ugd-Fw-0hR" firstAttribute="leading" secondItem="7Qg-Vp-LyS" secondAttribute="leadingMargin" constant="40" id="x8V-MH-rhr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmChangeText" destination="D5D-8R-hx2" id="7nC-oH-s9a"/>
+                        <outlet property="displayInfo" destination="ugd-Fw-0hR" id="6h9-pd-3Jg"/>
+                        <outlet property="userChange" destination="XIq-8g-dcT" id="MGM-oe-vXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8R-LW-5e1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2286" y="379"/>
+            <point key="canvasLocation" x="2285.5999999999999" y="378.26086956521743"/>
         </scene>
         <!--About Us-->
         <scene sceneID="jFk-Jk-udL">
@@ -192,7 +231,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rgC-gS-uof">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
