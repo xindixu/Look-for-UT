@@ -126,8 +126,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="20" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94D-H7-Fgt">
-                                <rect key="frame" x="16" y="28" width="345" height="390"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="20" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94D-H7-Fgt">
+                                <rect key="frame" x="10" y="28" width="355" height="390"/>
                                 <color key="backgroundColor" red="1" green="0.98958333330000003" blue="0.98958333330000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">We hope that this app will help you learn more about the UT campus and the things this campus has to offer to new students. In order to make an interactive exploration, we create this app for students to enjoy a nice walk on the forty acres. The way it will work is you will click "Play the game" below and once you form a team, the game will start. Once you find the required places, you will get a coupon from a restaurant so that you can try out some eateries as a group. For more information on how to play the game, click the Tutorial tab below.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
@@ -144,7 +144,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="94D-H7-Fgt" secondAttribute="trailing" constant="10" id="06N-ty-cUt"/>
                             <constraint firstItem="EyV-Vv-XZe" firstAttribute="top" secondItem="94D-H7-Fgt" secondAttribute="bottom" constant="200" id="6ai-bH-QdS"/>
+                            <constraint firstItem="94D-H7-Fgt" firstAttribute="leading" secondItem="aEM-15-8Mc" secondAttribute="leading" constant="10" id="c8b-xQ-hJn"/>
                             <constraint firstItem="94D-H7-Fgt" firstAttribute="top" secondItem="g9N-go-agt" secondAttribute="bottom" constant="8" id="mzv-PI-JkU"/>
                         </constraints>
                     </view>
@@ -776,7 +778,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aboutusimg" width="20" height="20"/>
+        <image name="aboutusimg" width="30" height="30"/>
         <image name="accountimg" width="20" height="20"/>
         <image name="homeimg" width="20" height="20"/>
         <image name="tutorialimg" width="20" height="20"/>

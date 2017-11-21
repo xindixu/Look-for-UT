@@ -12,7 +12,7 @@ import FirebaseAuth
 
 class AccountChangeViewController: UIViewController, UITextFieldDelegate {
 
-    private var funcNames:[String] = ["Change Username", "Change Password", "Change Email", "Check Records", "Coupons", "Edit Name, Gender, and Year", "Link Accounts", "Delete Account"]
+    private var funcNames:[String] = ["Change Username", "Change Password", "Change Email", "Add Name", "Add Gender", "Add Year", "Delete Account"]
     
     var functionCall:String?
     var ref: DatabaseReference?
@@ -70,11 +70,19 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 self.displayInfo.text = "Current Email is \(email)"
             }
             
-            if(self.settingNumber == 5){
-                self.displayInfo.text = "Add your name, Gender, and Year"
+            if(self.settingNumber == 3){
+                self.displayInfo.text = "Add your Name"
             }
             
-            if(self.settingNumber == 7) {
+            if(self.settingNumber == 4){
+                self.displayInfo.text = "Add your Gender"
+            }
+            
+            if(self.settingNumber == 5){
+                self.displayInfo.text = "Add your Year"
+            }
+            
+            if(self.settingNumber == 6) {
                 self.displayInfo.text = "Delete Account"
                 self.confirmChange.setTitle("Click here to delete account", for: .normal)
                 self.confirmChange.backgroundColor = .red
@@ -120,8 +128,20 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 }
                 prntRef.updateChildValues(["email": self.userChange.text! as NSString])
             }
-        
-            if (self.settingNumber == 7){
+       
+            if (self.settingNumber == 3){
+                prntRef.child("Name").setValue(self.userChange.text)
+            }
+  
+            if (self.settingNumber == 4){
+                prntRef.child("Gender").setValue(self.userChange.text)
+            }
+    
+            if (self.settingNumber == 5){
+                prntRef.child("Year").setValue(self.userChange.text)
+            }
+
+            if (self.settingNumber == 6){
                 let user = Auth.auth().currentUser
                 user?.delete { error in
                 if let error = error {
@@ -130,7 +150,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 }
                 prntRef.removeValue()
             }
-        
+
         //go back to profile page
         
         //create alert controller for confirmation
