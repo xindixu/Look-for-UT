@@ -14,17 +14,14 @@ class GamePrepViewController: UIViewController {
     var ref: DatabaseReference?
     var gameCode: String?
     @IBOutlet weak var playerList: UILabel!
-    var players: [String] = []
+    var nameOfMembers: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
         print("gameprepVC:  \(gameCode!)")
-        ref?.child("Games/\(gameCode!)/players").observe(.childAdded, with: { (players) in
-            let value = players.value as! String
-
-            print("hahahah")
-        })
+        let playersQuery = ref?.child("Games/\(gameCode!)/players").queryOrderedByKey()
+        print(playersQuery)
     }
 
     override func didReceiveMemoryWarning() {
