@@ -14,6 +14,7 @@ class GamePrepViewController: UIViewController {
     var ref: DatabaseReference?
     var gameCode: String?
     @IBOutlet weak var playerList: UILabel!
+    var players: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,7 @@ class GamePrepViewController: UIViewController {
         print("gameprepVC:  \(gameCode!)")
         ref?.child("Games/\(gameCode!)/players").observe(.childAdded, with: { (players) in
             let value = players.value as! String
-            self.ref?.child("Players/\(value)/username").observeSingleEvent(of: .childAdded, with: { (username) in
-                let name = username.value as! String
-                self.playerList.text = "\(self.playerList.text!)\(name)"
-            })
+
             print("hahahah")
         })
     }
