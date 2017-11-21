@@ -104,6 +104,10 @@ class LoginViewController: UIViewController {
         
         // set firebase ref
         ref = Database.database().reference()
+        
+        email.autocorrectionType = .no
+        password.autocorrectionType = .no
+        username.autocorrectionType = .no
     }
 
     override func didReceiveMemoryWarning() {

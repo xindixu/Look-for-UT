@@ -48,6 +48,8 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         updateQuestion()
         runTimer()
         
+        answer.autocorrectionType = .no
+        
         // check if the location service is available
         if !CLLocationManager.locationServicesEnabled() {
             displayLocationAlert("Error", message: "Location Services not available!")
