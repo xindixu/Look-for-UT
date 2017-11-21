@@ -20,7 +20,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
     var users: [User] = []
     var settingNumber:Int?
     let displayInfo = UILabel(frame: CGRect(x: 100, y: 100, width: 300, height: 30))
-    let userChange = UITextField(frame: CGRect(x:100, y:200, width: 300, height: 30))
+    var userChange = UITextField(frame: CGRect(x:100, y:200, width: 300, height: 30))
     let confirmChange = UIButton(frame: CGRect(x: 100, y: 300, width: 300, height: 30))
     
     
@@ -76,6 +76,15 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
             
             if(self.settingNumber == 4){
                 self.displayInfo.text = "Add your Gender"
+                let items = ["Male", "Female", "Fabulous"]
+                let segmentedVC = UISegmentedControl(items: ["Male", "Female", "Fabulous"])
+                segmentedVC.frame = CGRect(x: 50, y: 200, width: 300, height: 30)
+                segmentedVC.selectedSegmentIndex = 0
+                
+                segmentedVC.addTarget(self, action: "segmentedControlValueChanged:", for:.touchUpInside)
+                self.view.addSubview(segmentedVC)
+                self.userChange.frame.origin = CGPoint(x:-500, y: -100)
+                self.userChange.text = items[segmentedVC.selectedSegmentIndex]
             }
             
             if(self.settingNumber == 5){
@@ -93,7 +102,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 let CancelAction = UIAlertAction(title: "Cancel", style: .default) {action in self.navigationController?.popToRootViewController(animated: true)}
                 alertController.addAction(CancelAction)
                 
-                let OKAction = UIAlertAction(title: "OK", style: .default) {action in print("completed")}
+                let OKAction = UIAlertAction(title: "OK", style: .default) {action in print("cp")}
                 alertController.addAction(OKAction)
                 
                 self.present(alertController, animated: true)
@@ -109,6 +118,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     func confirmClicked(sender: UIButton!) {
         let userID = Auth.auth().currentUser?.uid
         let prntRef = Database.database().reference().child("Players").child(userID!);
@@ -119,7 +129,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         
             if (self.settingNumber == 1){
                 print("\(self.userChange.text!) is password")
-                Auth.auth().currentUser?.updatePassword(to: self.userChange.text!) { (error) in
+                Auth.auth().currentUser?.updatePassword(to: userChange.text!) { (error) in
                 }
             }
  
