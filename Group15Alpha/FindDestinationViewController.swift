@@ -40,6 +40,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Look For UT"
         
         // set database ref
         ref = Database.database().reference()
