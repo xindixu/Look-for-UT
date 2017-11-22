@@ -17,6 +17,8 @@ class StartPlayingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Home"
+        
         ref = Database.database().reference()
         currentPlayer.text = Auth.auth().currentUser?.email
         // Do any additional setup after loading the view.

@@ -18,6 +18,8 @@ class GamePrepViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Get Ready"
+        
         ref = Database.database().reference()
         print("gameprepVC:  \(gameCode!)")
         let playersQuery = ref?.child("Games/\(gameCode!)/players").queryOrderedByKey()
