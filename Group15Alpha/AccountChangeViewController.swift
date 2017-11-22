@@ -33,6 +33,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         promptChange()
         self.title = self.funcNames[self.settingNumber!]
         // Do any additional setup after loading the view.
+        self.userChange.backgroundColor = UIColor.yellow
     }
 
     override func didReceiveMemoryWarning() {
@@ -148,7 +149,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                  else{
         
                     Auth.auth().currentUser?.updatePassword(to: userChange.text!) { (error) in
-        //      }
+                }
  
                 
                 }
