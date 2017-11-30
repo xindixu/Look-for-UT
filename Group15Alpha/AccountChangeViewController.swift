@@ -131,7 +131,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 
         
                 let word = self.userChange.text! as String
-        /*
+        
                 if(word.count < 6){
                      let alertController = UIAlertController(title: "Error", message: "Please make new password at least 6 characters long", preferredStyle: UIAlertControllerStyle.alert)
                      
@@ -144,9 +144,9 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                      self.present(alertController, animated: true)
                 }
                  else{
-        */
+ 
                     Auth.auth().currentUser?.updatePassword(to: userChange.text!) { (error) in
-         //       }
+                }
  
                 
                 }
