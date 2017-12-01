@@ -35,7 +35,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         self.userChange.backgroundColor = UIColor.yellow
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -121,8 +121,12 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmChange(_ sender: Any) {
+    
+    
+    //func confirmClicked(sender: UIButton!) {
         let userID = Auth.auth().currentUser?.uid
         let prntRef = Database.database().reference().child("Players").child(userID!);
+        print("Make Change is clicked \(self.settingNumber!)")
             if (self.settingNumber == 0){
                 prntRef.updateChildValues(["username": self.userChange.text! as NSString])
             }
@@ -131,7 +135,6 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 
         
                 let word = self.userChange.text! as String
-        
                 if(word.count < 6){
                      let alertController = UIAlertController(title: "Error", message: "Please make new password at least 6 characters long", preferredStyle: UIAlertControllerStyle.alert)
                      
@@ -144,7 +147,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                      self.present(alertController, animated: true)
                 }
                  else{
- 
+        
                     Auth.auth().currentUser?.updatePassword(to: userChange.text!) { (error) in
                 }
  
@@ -159,15 +162,15 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
             }
        
             if (self.settingNumber == 3){
-                prntRef.child("name").setValue(self.userChange.text)
+                prntRef.child("Name").setValue(self.userChange.text)
             }
   
             if (self.settingNumber == 4){
-                prntRef.child("gender").setValue(genderVC.titleForSegment(at: self.genderVC.selectedSegmentIndex))
+                prntRef.child("Gender").setValue(genderVC.titleForSegment(at: self.genderVC.selectedSegmentIndex))
             }
     
             if (self.settingNumber == 5){
-                prntRef.child("year").setValue(yearVC.titleForSegment(at: self.yearVC.selectedSegmentIndex))
+                prntRef.child("Year").setValue(yearVC.titleForSegment(at: self.yearVC.selectedSegmentIndex))
             }
 
             if (self.settingNumber == 6){
@@ -187,6 +190,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         
         let OKAction = UIAlertAction(title: "OK", style: .default) {action in
             self.navigationController?.popToRootViewController(animated: true)
+            print("completed")
         }
         alertController.addAction(OKAction)
         

@@ -64,6 +64,7 @@ class JoinTeamViewController: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         codeTF.autocorrectionType = .no
+        self.navigationItem.hidesBackButton = true
     }
 
     override func didReceiveMemoryWarning() {
