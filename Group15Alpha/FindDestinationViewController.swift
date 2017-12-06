@@ -95,10 +95,10 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
                     // update puzzleIndex / save puzzleIndex to the database
                     let value = puzzleCode.value as! NSArray
                     let currentPuzzleIndex = String(describing: value[self.currentQuestion-1])
-                    self.ref?.child("Games/\(gameCode)/currentPuzzle").setValue(currentPuzzleIndex);
-                    
+                    self.ref?.child("Games/\(gameCode)/currentPuzzle").setValue(currentPuzzleIndex)
                 })
             }
+            
             // update user interface with appropriate texts
             // creator & member: get info from the database
             self.ref?.child("Games/\(gameCode)/currentPuzzle").observe(.value, with: { currentPuzzle in

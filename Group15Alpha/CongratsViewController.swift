@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class CongratsViewController: UIViewController {
     
+    var ref: DatabaseReference!
     var list:[String] = ["No1","No2","No3"]
-    var place = 0
+    var place:String = ""
     var time: Int = 0
     
     
@@ -19,18 +21,26 @@ class CongratsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        
         if 0 < time && time < 100{
-            place = 2
+            place = "2"
         }
         else if 100 < time && time < 200{
-            place = 1
+            place = "1"
         }
         else{
-            place = 0
+            place = "0"
         }
-        promoCode.text = list[place]
+        
+        
+        self.ref?.child("Coupons/\(place)").observe(.value, with: { snapshot in
+                self.promoCode.text = snapshot.value as! String
+        })
         // Do any additional setup after loading the view.
     }
+    
     
     
     override func didReceiveMemoryWarning() {
