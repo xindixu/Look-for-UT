@@ -46,30 +46,22 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         ref = Database.database().reference()
         userRef = ref?.child("Players/\((Auth.auth().currentUser?.uid)!)")
         
-        if !ifTutorial {
-            updateQuestion()
-        }
-        else{
-            self.clue.text = "This is the tutorial, please enter A0"
-            self.geoPoint.text = "(0,0)"
-            self.correctAnswer = "A0"
-        }
+        updateQuestion()
         runTimer()
         
         answer.autocorrectionType = .no
         
         // check if the location service is available
-        if CLLocationManager.locationServicesEnabled() {
-            // Configure the location manager for what we want to track
-            locationManager.desiredAccuracy = 100 // meters
-            locationManager.delegate = self
-            locationManager.startUpdatingLocation()
+        if !CLLocationManager.locationServicesEnabled() {
+            displayLocationAlert("Error", message: "Location Services not available!")
         }
         else {
-            self.displayLocationAlert("Error", message: "Location services not turned on!")
+            // Configure the location manager for what we want to track
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = 100 // meters
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
         }
-        
-        firstTimeSeeMap = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -178,7 +170,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         self.seconds -= 1
         self.minutes = floor(Double(seconds / 60))
         self.residual = seconds % 60
-        self.timerL.text = "Time Left: " + String(format: "%.0f", minutes) + " min " + String(residual) + " sec"
+        self.timerL.text = "Time Left: " + String(minutes) + " min " + String(residual) + " sec"
         
     }
     
@@ -196,7 +188,6 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     // Called every time our user's location is updated
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if firstTimeSeeMap == true {
-            print ("first time see map")
             let currentLocation = locations[0]
             let mySpan:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.00)
             print(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)

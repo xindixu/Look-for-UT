@@ -19,7 +19,6 @@ class CreateTeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
 
         gameCode = generateCode() as NSString
         codeL.text! = gameCode as String
@@ -60,8 +59,8 @@ class CreateTeamViewController: UIViewController {
         // add random 5 puzzles
         while self.pIndex.count < 5 {
             // range
-            // puzzle index: 1....15 numOfPuzzle 15
-            let randomNum = Int(arc4random_uniform(14)+1)
+            // puzzle index: 0....7 numOfPuzzle 8
+            let randomNum = Int(arc4random_uniform(7))
             // check if duplicated
             var duplicated = false
             for i in self.pIndex {

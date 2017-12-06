@@ -9,14 +9,11 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-import CoreLocation
 
-class LoginViewController: UIViewController,CLLocationManagerDelegate {
+class LoginViewController: UIViewController {
     var ref: DatabaseReference!
     var databaseHandle: DatabaseReference!
     var users: [User] = []
-    
-    let locationManager = CLLocationManager()
     
     @IBOutlet weak var option: UISegmentedControl!
     
@@ -103,7 +100,6 @@ class LoginViewController: UIViewController,CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
         username.alpha = 0
         
         // set firebase ref
@@ -112,21 +108,6 @@ class LoginViewController: UIViewController,CLLocationManagerDelegate {
         email.autocorrectionType = .no
         password.autocorrectionType = .no
         username.autocorrectionType = .no
-        
-        // check if the location service is available
-        if CLLocationManager.locationServicesEnabled() {
-            // Configure the location manager for what we want to track.
-            locationManager.desiredAccuracy = 100 // meters
-            locationManager.delegate = self
-            
-            // If user hasn't done so yet, we need to ask for access to the location data.
-            if CLLocationManager.authorizationStatus() == .notDetermined {
-                locationManager.requestWhenInUseAuthorization()
-            }
-        }
-        else {
-            self.displayLocationAlert("Error", message: "Location services not turned on!")
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -134,17 +115,6 @@ class LoginViewController: UIViewController,CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // start of map&location functions
-    
-    func displayLocationAlert(_ title:String, message:String) {
-        self.alertController = UIAlertController(title:title, message:message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-        }
-        self.alertController!.addAction(okAction)
-        self.present(self.alertController!, animated: true, completion:nil)
-    }
-    
-    // end of map&location functions
 
     /*
     // MARK: - Navigation
