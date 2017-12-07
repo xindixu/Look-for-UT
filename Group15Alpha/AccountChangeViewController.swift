@@ -35,6 +35,10 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         self.userChange.backgroundColor = UIColor.yellow
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,6 +58,13 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
             let username = value?["username"] as? String ?? ""
             
             //Run this setup if change username is selected
+            if(self.settingNumber == 0) {
+                let coupon = value?["coupon"] as? String ?? ""
+                self.displayInfo.text = "Your Coupon Code is: \(coupon)"
+                self.userChange.isHidden = true
+                self.confirmChangeText.isHidden = true
+            }
+            
             if(self.settingNumber == 1) {
                 self.displayInfo.text = "Username: \(username)"
             }
@@ -124,79 +135,81 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         let userID = Auth.auth().currentUser?.uid
         let prntRef = Database.database().reference().child("Players").child(userID!)
         print("Make Change is clicked \(self.settingNumber!)")
-            if (self.settingNumber == 1){
-                prntRef.updateChildValues(["username": self.userChange.text! as NSString])
-            }
         
-            if (self.settingNumber == 2){
-                
         
-                let word = self.userChange.text! as String
-                
-    /*
-                if(word.count < 6){
-                     let alertController = UIAlertController(title: "Error", message: "Please make new password at least 6 characters long", preferredStyle: UIAlertControllerStyle.alert)
-                     
-                     let OKAction = UIAlertAction(title: "OK", style: .default) {action in
-                     self.navigationController?.popToRootViewController(animated: true)
-                     print("completed")
-                     }
-                     alertController.addAction(OKAction)
-                     
-                     self.present(alertController, animated: true)
-                }
-                 else{
-        */
-                    Auth.auth().currentUser?.updatePassword(to: userChange.text!) { (error) in
-       //         }
- 
-                
-                }
-            }
- 
-            if (self.settingNumber == 3){
-                Auth.auth().currentUser?.updateEmail(to: userChange.text!) { (error) in
-                }
-                prntRef.updateChildValues(["email": self.userChange.text! as NSString])
-            }
-       
-            if (self.settingNumber == 4){
-                prntRef.child("Name").setValue(self.userChange.text)
-            }
-  
-            if (self.settingNumber == 5){
-                prntRef.child("Gender").setValue(genderVC.titleForSegment(at: self.genderVC.selectedSegmentIndex))
-            }
-    
-            if (self.settingNumber == 6){
-                prntRef.child("Year").setValue(yearVC.titleForSegment(at: self.yearVC.selectedSegmentIndex))
-            }
-
-            if (self.settingNumber == 7){
-                let user = Auth.auth().currentUser
-                user?.delete { error in
-                if let error = error {
-                    } else {
-                    }
-                }
-                prntRef.removeValue()
-            }
-
-        //go back to profile page
-        
-        //create alert controller for confirmation
-        let alertController = UIAlertController(title: "Modification", message: "Change complete.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let OKAction = UIAlertAction(title: "OK", style: .default) {action in
-            self.navigationController?.popToRootViewController(animated: true)
-            print("completed")
+        if (self.settingNumber == 1){
+            prntRef.updateChildValues(["username": self.userChange.text! as NSString])
         }
-        alertController.addAction(OKAction)
-        
-        self.present(alertController, animated: true)
-        
-        //self.navigationController?.popToRootViewController(animated: true)
+    
+        if (self.settingNumber == 2){
+            
+    
+            let word = self.userChange.text! as String
+            
+
+            if(word.count < 6){
+                 let alertController = UIAlertController(title: "Error", message: "Please make new password at least 6 characters long", preferredStyle: UIAlertControllerStyle.alert)
+                 
+                 let OKAction = UIAlertAction(title: "OK", style: .default) {action in
+                 self.navigationController?.popToRootViewController(animated: true)
+                 print("completed")
+                 }
+                 alertController.addAction(OKAction)
+                 
+                 self.present(alertController, animated: true)
+            }
+             else{
+    
+                Auth.auth().currentUser?.updatePassword(to: userChange.text!) { (error) in
+            }
+
+            
+            }
+        }
+
+        if (self.settingNumber == 3){
+            Auth.auth().currentUser?.updateEmail(to: userChange.text!) { (error) in
+            }
+            prntRef.updateChildValues(["email": self.userChange.text! as NSString])
+        }
+   
+        if (self.settingNumber == 4){
+            prntRef.child("name").setValue(self.userChange.text)
+        }
+
+        if (self.settingNumber == 5){
+            prntRef.child("gender").setValue(genderVC.titleForSegment(at: self.genderVC.selectedSegmentIndex))
+        }
+
+        if (self.settingNumber == 6){
+            prntRef.child("year").setValue(yearVC.titleForSegment(at: self.yearVC.selectedSegmentIndex))
+        }
+
+        if (self.settingNumber == 7){
+            let user = Auth.auth().currentUser
+            user?.delete { error in
+            if let error = error {
+                } else {
+                }
+            }
+            prntRef.removeValue()
+        }
+
+    //go back to profile page
+    
+    //create alert controller for confirmation
+    let alertController = UIAlertController(title: "Modification", message: "Change complete.", preferredStyle: UIAlertControllerStyle.alert)
+    
+    let OKAction = UIAlertAction(title: "OK", style: .default) {action in
+        self.navigationController?.popToRootViewController(animated: true)
+        print("completed")
     }
+    alertController.addAction(OKAction)
+    
+    self.present(alertController, animated: true)
+    
+    //self.navigationController?.popToRootViewController(animated: true)
+}
     
     /*
     // MARK: - Navigation

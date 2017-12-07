@@ -37,11 +37,10 @@ class CongratsViewController: UIViewController {
         
         
         self.ref?.child("Coupons/\(place)").observe(.value, with: { snapshot in
-                self.promoCode.text = snapshot.value as! String
-                print("\(self.promoCode.text)? is promo code")
+            self.promoCode.text = snapshot.value as! String
             let userID = Auth.auth().currentUser?.uid
             let prntRef = Database.database().reference().child("Players").child(userID!);
-            prntRef.child("coupon").setValue(self.place)
+            prntRef.child("coupon").setValue(self.promoCode.text)
         })
         
         

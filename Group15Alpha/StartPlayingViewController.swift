@@ -23,6 +23,12 @@ class StartPlayingViewController: UIViewController {
         currentPlayer.text = Auth.auth().currentUser?.email
         // Do any additional setup after loading the view.
         
+        
+        
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let userID = Auth.auth().currentUser?.uid
         ref?.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -32,7 +38,6 @@ class StartPlayingViewController: UIViewController {
         }) {(error) in
             print(error.localizedDescription)
         }
-
     }
     
     override func didReceiveMemoryWarning() {
