@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class CongratsViewController: UIViewController {
     
@@ -37,7 +38,13 @@ class CongratsViewController: UIViewController {
         
         self.ref?.child("Coupons/\(place)").observe(.value, with: { snapshot in
                 self.promoCode.text = snapshot.value as! String
+                print("\(self.promoCode.text)? is promo code")
+            let userID = Auth.auth().currentUser?.uid
+            let prntRef = Database.database().reference().child("Players").child(userID!);
+            prntRef.child("coupon").setValue(self.place)
         })
+        
+        
         // Do any additional setup after loading the view.
     }
     

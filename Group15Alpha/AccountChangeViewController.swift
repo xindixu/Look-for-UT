@@ -12,7 +12,7 @@ import FirebaseAuth
 
 class AccountChangeViewController: UIViewController, UITextFieldDelegate {
 
-    private var funcNames:[String] = ["Change Username", "Change Password", "Change Email", "Add Name", "Add Gender", "Add Year", "Delete Account"]
+    private var funcNames:[String] = ["Check Coupons", "Change Username", "Change Password", "Change Email", "Add Name", "Add Gender", "Add Year", "Delete Account"]
     
     var ref: DatabaseReference?
     var databaseHandle: DatabaseReference!
@@ -54,25 +54,25 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
             let username = value?["username"] as? String ?? ""
             
             //Run this setup if change username is selected
-            if(self.settingNumber == 0) {
+            if(self.settingNumber == 1) {
                 self.displayInfo.text = "Username: \(username)"
             }
             
             //Rune this if change password
-            if(self.settingNumber == 1) {
+            if(self.settingNumber == 2) {
                 self.displayInfo.text = "Input your new password"
             }
             
             //Run this setup if change email is selected
-            if(self.settingNumber == 2) {
+            if(self.settingNumber == 3) {
                 self.displayInfo.text = "Current Email is \(email)"
             }
             
-            if(self.settingNumber == 3){
+            if(self.settingNumber == 4){
                 self.displayInfo.text = "Edit your Name"
             }
             
-            if(self.settingNumber == 4){
+            if(self.settingNumber == 5){
                 self.displayInfo.text = "Edit your Gender"
                 self.userChange.isHidden = true
                 
@@ -84,7 +84,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 self.view.addSubview(self.genderVC)
             }
             
-            if(self.settingNumber == 5){
+            if(self.settingNumber == 6){
                 self.displayInfo.text = "Edit your Year"
                 self.userChange.isHidden = true
                 
@@ -96,7 +96,7 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                 self.view.addSubview(self.yearVC)
             }
             
-            if(self.settingNumber == 6) {
+            if(self.settingNumber == 7) {
                 self.displayInfo.text = "Delete Account"
                 self.confirmChangeText.setTitle("Click here to delete account", for: .normal)
                 self.confirmChangeText.backgroundColor = .red
@@ -121,20 +121,19 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmChange(_ sender: Any) {
-    
-    
-    //func confirmClicked(sender: UIButton!) {
         let userID = Auth.auth().currentUser?.uid
-        let prntRef = Database.database().reference().child("Players").child(userID!);
+        let prntRef = Database.database().reference().child("Players").child(userID!)
         print("Make Change is clicked \(self.settingNumber!)")
-            if (self.settingNumber == 0){
+            if (self.settingNumber == 1){
                 prntRef.updateChildValues(["username": self.userChange.text! as NSString])
             }
         
-            if (self.settingNumber == 1){
+            if (self.settingNumber == 2){
                 
         
                 let word = self.userChange.text! as String
+                
+    /*
                 if(word.count < 6){
                      let alertController = UIAlertController(title: "Error", message: "Please make new password at least 6 characters long", preferredStyle: UIAlertControllerStyle.alert)
                      
@@ -147,33 +146,33 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
                      self.present(alertController, animated: true)
                 }
                  else{
-        
+        */
                     Auth.auth().currentUser?.updatePassword(to: userChange.text!) { (error) in
-                }
+       //         }
  
                 
                 }
             }
  
-            if (self.settingNumber == 2){
+            if (self.settingNumber == 3){
                 Auth.auth().currentUser?.updateEmail(to: userChange.text!) { (error) in
                 }
                 prntRef.updateChildValues(["email": self.userChange.text! as NSString])
             }
        
-            if (self.settingNumber == 3){
+            if (self.settingNumber == 4){
                 prntRef.child("Name").setValue(self.userChange.text)
             }
   
-            if (self.settingNumber == 4){
+            if (self.settingNumber == 5){
                 prntRef.child("Gender").setValue(genderVC.titleForSegment(at: self.genderVC.selectedSegmentIndex))
             }
     
-            if (self.settingNumber == 5){
+            if (self.settingNumber == 6){
                 prntRef.child("Year").setValue(yearVC.titleForSegment(at: self.yearVC.selectedSegmentIndex))
             }
 
-            if (self.settingNumber == 6){
+            if (self.settingNumber == 7){
                 let user = Auth.auth().currentUser
                 user?.delete { error in
                 if let error = error {
