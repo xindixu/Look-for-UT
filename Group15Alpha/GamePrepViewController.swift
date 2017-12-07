@@ -36,7 +36,7 @@ class GamePrepViewController: UIViewController,CLLocationManagerDelegate {
                 self.ref?.child("Players/\(i)").observe( .value, with: { (snapshot) in
                     let data = snapshot.value as! [String:Any]
                     if let username = data["username"] as? String{
-                        //output.append(username)
+                        output.append(username)
                         self.playerList.text = "\(self.playerList.text!)\n\(username)"
                     }
                 })
