@@ -57,7 +57,9 @@ class GamePrepViewController: UIViewController,CLLocationManagerDelegate {
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in }
         alert.addAction(okAction)
         
-        self.present(alert, animated: true, completion:nil)
+        DispatchQueue.main.async{
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // end of map&location functions

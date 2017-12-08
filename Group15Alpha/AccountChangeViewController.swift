@@ -50,6 +50,10 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func promptChange() {
         let userID = Auth.auth().currentUser?.uid
         ref?.child("Players").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -210,6 +214,8 @@ class AccountChangeViewController: UIViewController, UITextFieldDelegate {
     
     //self.navigationController?.popToRootViewController(animated: true)
 }
+    
+    
     
     /*
     // MARK: - Navigation

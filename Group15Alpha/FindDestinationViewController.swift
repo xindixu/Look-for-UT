@@ -190,7 +190,9 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in }
         alert.addAction(okAction)
         
-        self.present(alert, animated: true, completion:nil)
+        DispatchQueue.main.async{
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // Called every time our user's location is updated
@@ -208,6 +210,15 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         }
         
         self.map.showsUserLocation = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // end of map&location functions
