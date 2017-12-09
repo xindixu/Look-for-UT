@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -274,20 +275,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOH-Jn-3SH">
-                                <rect key="frame" x="166" y="492" width="42" height="30"/>
+                                <rect key="frame" x="16" y="492" width="288" height="30"/>
                                 <state key="normal" title="Play!!!"/>
                                 <connections>
                                     <segue destination="muV-HX-cWt" kind="show" id="Hqd-fL-khd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best of luck to you Scavenger!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6H-BA-7r5">
-                                <rect key="frame" x="71" y="446" width="178" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcA-5e-qOj">
-                                <rect key="frame" x="154" y="530" width="5" height="30"/>
+                                <rect key="frame" x="16" y="528" width="288" height="30"/>
                                 <state key="normal" title="Sign Out">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0198914904" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -316,28 +311,37 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="003-pacifism-3" translatesAutoresizingMaskIntoConstraints="NO" id="foR-qE-U7A">
                                 <rect key="frame" x="16" y="94" width="288" height="302"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="302" id="5Zc-Ko-Taa"/>
+                                    <constraint firstAttribute="width" secondItem="foR-qE-U7A" secondAttribute="height" multiplier="144:151" id="NmO-DE-SdL"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best of luck to you Scavenger!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6H-BA-7r5">
+                                <rect key="frame" x="44" y="446" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="foR-qE-U7A" firstAttribute="top" secondItem="jKN-bj-YEx" secondAttribute="bottom" constant="24" id="0Uz-gO-aRf"/>
-                            <constraint firstItem="foR-qE-U7A" firstAttribute="trailing" secondItem="Yiw-8g-k7k" secondAttribute="trailingMargin" id="HNg-7A-gFV"/>
-                            <constraint firstItem="E6H-BA-7r5" firstAttribute="top" secondItem="jKN-bj-YEx" secondAttribute="bottom" constant="376" id="Jyv-rH-FWo"/>
+                            <constraint firstItem="foR-qE-U7A" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leadingMargin" id="5Hh-YE-4Eg"/>
+                            <constraint firstItem="kp5-MI-nMI" firstAttribute="top" secondItem="8bK-7H-f0p" secondAttribute="bottom" constant="11" id="69f-o7-Qz6"/>
+                            <constraint firstItem="foR-qE-U7A" firstAttribute="top" secondItem="jKN-bj-YEx" secondAttribute="bottom" constant="24" id="Bmi-6q-xTf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qcA-5e-qOj" secondAttribute="trailing" id="C9b-P7-9ao"/>
+                            <constraint firstItem="yOH-Jn-3SH" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leadingMargin" id="FCK-6Q-qKT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yOH-Jn-3SH" secondAttribute="trailing" id="InQ-SD-77a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E6H-BA-7r5" secondAttribute="trailing" constant="27" id="OPV-si-XdG"/>
+                            <constraint firstItem="E6H-BA-7r5" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leadingMargin" constant="28" id="TpI-mH-0aB"/>
                             <constraint firstItem="jKN-bj-YEx" firstAttribute="top" secondItem="Yiw-8g-k7k" secondAttribute="top" constant="10" id="TuG-Cv-nxu"/>
-                            <constraint firstItem="yOH-Jn-3SH" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leadingMargin" constant="150" id="WbR-CL-uqH"/>
+                            <constraint firstItem="yOH-Jn-3SH" firstAttribute="top" secondItem="E6H-BA-7r5" secondAttribute="bottom" constant="25" id="WMx-0L-ofC"/>
                             <constraint firstAttribute="trailing" secondItem="jKN-bj-YEx" secondAttribute="trailing" id="Zwh-CQ-nNS"/>
-                            <constraint firstItem="qcA-5e-qOj" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leading" constant="154" id="awu-sV-Bpe"/>
-                            <constraint firstItem="E6H-BA-7r5" firstAttribute="top" secondItem="foR-qE-U7A" secondAttribute="bottom" constant="50" id="bsH-UE-fDx"/>
+                            <constraint firstItem="qcA-5e-qOj" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leadingMargin" id="f78-63-lVm"/>
                             <constraint firstItem="jKN-bj-YEx" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leading" id="gDu-id-6oh"/>
-                            <constraint firstItem="qcA-5e-qOj" firstAttribute="top" secondItem="yOH-Jn-3SH" secondAttribute="bottom" constant="8" id="hCk-jT-feX"/>
-                            <constraint firstAttribute="trailing" secondItem="qcA-5e-qOj" secondAttribute="trailing" constant="161" id="hqN-4E-b3c"/>
+                            <constraint firstItem="foR-qE-U7A" firstAttribute="trailing" secondItem="Yiw-8g-k7k" secondAttribute="trailingMargin" id="hGi-TJ-hSf"/>
                             <constraint firstItem="kp5-MI-nMI" firstAttribute="centerX" secondItem="Yiw-8g-k7k" secondAttribute="centerX" id="n5L-hG-S9k"/>
-                            <constraint firstItem="foR-qE-U7A" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leadingMargin" id="nle-4k-4GZ"/>
-                            <constraint firstItem="kp5-MI-nMI" firstAttribute="top" secondItem="qcA-5e-qOj" secondAttribute="bottom" constant="19" id="nnH-jB-JsQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yOH-Jn-3SH" secondAttribute="trailing" constant="150" id="oij-3Z-M0C"/>
-                            <constraint firstItem="yOH-Jn-3SH" firstAttribute="top" secondItem="E6H-BA-7r5" secondAttribute="bottom" constant="25" id="sBW-AL-Deh"/>
-                            <constraint firstItem="E6H-BA-7r5" firstAttribute="leading" secondItem="Yiw-8g-k7k" secondAttribute="leadingMargin" constant="55" id="v6g-7K-Nof"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="E6H-BA-7r5" secondAttribute="trailing" constant="55" id="z3v-ZB-4aY"/>
+                            <constraint firstItem="8bK-7H-f0p" firstAttribute="top" secondItem="qcA-5e-qOj" secondAttribute="bottom" constant="10" id="t7b-9x-n4Y"/>
+                            <constraint firstItem="E6H-BA-7r5" firstAttribute="top" secondItem="foR-qE-U7A" secondAttribute="bottom" constant="50" id="zio-wp-dAR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0G3-gW-Fqc"/>
@@ -347,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snO-RL-qS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3648.8000000000002" y="-387.25637181409297"/>
+            <point key="canvasLocation" x="3648.75" y="-387.67605633802816"/>
         </scene>
         <!--You Need A Team!-->
         <scene sceneID="e4M-wJ-oKJ">
