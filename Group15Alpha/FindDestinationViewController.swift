@@ -33,8 +33,6 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var timerL: UILabel!
     @IBOutlet weak var clue: UILabel!
-    @IBOutlet weak var geoPoint: UILabel!
-    @IBOutlet weak var answer: UITextField!
     
     var alertController: UIAlertController? = nil
     
@@ -51,12 +49,9 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         }
         else{
             self.clue.text = "This is the tutorial, please enter A0"
-            self.geoPoint.text = "(0,0)"
             self.correctAnswer = "A0"
         }
         runTimer()
-        
-        answer.autocorrectionType = .no
         
         // check if the location service is available
         if CLLocationManager.locationServicesEnabled() {
@@ -107,7 +102,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
                 self.ref?.child("Puzzles/\(currentPuzzleIndex)").observe(.value, with: { snapshot in
                     let value = snapshot.value as! NSDictionary
                     self.clue.text = value["Clue"] as! String
-                    self.geoPoint.text = value["GeoPoint"] as! String
+                    // value["GeoPoint"] as! String
                     self.correctAnswer = value["Answer"] as! String
                 })
             })
@@ -117,7 +112,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     
     @IBAction func checkAnswer(_ sender: Any) {
         // change it to "xxx" is equal to "xxx "
-        if correctAnswer == answer.text {
+        if true {
             createAlert1(title: "You Got This!", message: "Good luck on the next one.")
         }
         else{
@@ -145,7 +140,6 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
                 self.present(vc!, animated: true, completion: nil)
             }
             else{
-                self.answer.text = ""
                 self.updateQuestion()
             }
         }))
