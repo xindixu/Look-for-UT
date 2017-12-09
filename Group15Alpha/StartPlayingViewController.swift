@@ -15,6 +15,7 @@ class StartPlayingViewController: UIViewController {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var currentPlayer: UILabel!
     
+    //little fountain - 30.2837284764915,-97.73958921432495
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"
@@ -22,10 +23,6 @@ class StartPlayingViewController: UIViewController {
         ref = Database.database().reference()
         currentPlayer.text = Auth.auth().currentUser?.email
         // Do any additional setup after loading the view.
-        
-        
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

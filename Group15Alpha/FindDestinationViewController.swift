@@ -28,6 +28,8 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     
     var lati = 0.0
     var long = 0.0
+    var isCorrect: Bool = false
+    
     
     // map stuff
     let locationManager = CLLocationManager()
@@ -76,8 +78,6 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     }
     
     func updateQuestion(){
-        
-        
         // use currentQuestion to get the actual index of the puzzle
         
         // get user info
@@ -88,7 +88,6 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
             
             // if user is the creator
             if user.hasChild("puzzleCode"){
-                
                 self.userRef.child("puzzleCode").observe(.value, with: { (puzzleCode) in
                     // update puzzleIndex / save puzzleIndex to the database
                     let value = puzzleCode.value as! NSArray
@@ -115,7 +114,8 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     
     @IBAction func checkAnswer(_ sender: Any) {
         // change it to "xxx" is equal to "xxx "
-        if true {
+        print(self.isCorrect)
+        if self.isCorrect {
             createAlert1(title: "You Got This!", message: "Good luck on the next one.")
         }
         else{
@@ -181,16 +181,18 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     
     // check pos
     
-    func checkPos(geopoint:String) -> Bool{
+    func checkPos(geopoint:String){
+        //30.284043478036256,-97.73692041635513
+        //30.289081049140005,-97.740678191185
         var results = geopoint.split(separator: ",")
         let correctLati = Double(results[0])
         let correctLong = Double(results[1])
         
-        if self.lati == correctLati && self.long  == correctLong{
-            return true
+        if abs(self.lati - correctLati!) < 0.001 && abs(self.long - correctLong!) < 0.001 {
+            self.isCorrect = true
         }
         else{
-            return false
+            self.isCorrect = false
         }
         print(results)
     }
