@@ -26,6 +26,9 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     var currentQuestion = 1
     var correctAnswer = ""
     
+    var lati = 0.0
+    var long = 0.0
+    
     // map stuff
     let locationManager = CLLocationManager()
     var firstTimeSeeMap = true
@@ -102,8 +105,8 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
                 self.ref?.child("Puzzles/\(currentPuzzleIndex)").observe(.value, with: { snapshot in
                     let value = snapshot.value as! NSDictionary
                     self.clue.text = value["Clue"] as! String
-                    // value["GeoPoint"] as! String
-                    self.correctAnswer = value["Answer"] as! String
+                    let geoPoint = value["GeoPoint"] as! String
+                    self.checkPos(geopoint: geoPoint)
                 })
             })
         })
@@ -176,6 +179,24 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         
     }
     
+    // check pos
+    
+    func checkPos(geopoint:String) -> Bool{
+        var results = geopoint.split(separator: ",")
+        let correctLati = Double(results[0])
+        let correctLong = Double(results[1])
+        
+        if self.lati == correctLati && self.long  == correctLong{
+            return true
+        }
+        else{
+            return false
+        }
+        print(results)
+    }
+    
+    
+    
     // start of map&location functions
     
     func displayLocationAlert(_ title:String, message:String) {
@@ -196,6 +217,10 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
             let currentLocation = locations[0]
             let mySpan:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.00)
             print(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
+            self.lati = currentLocation.coordinate.latitude
+            self.long = currentLocation.coordinate.longitude
+            
+            
             let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
             let myRegion:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, mySpan)
             map.setRegion(myRegion, animated: true)
