@@ -61,7 +61,7 @@ class CreateTeamViewController: UIViewController {
         while self.pIndex.count < 5 {
             // range
             // puzzle index: 1....15 numOfPuzzle 15
-            let randomNum = Int(arc4random_uniform(14)+1)
+            let randomNum = Int(arc4random_uniform(12)+1)
             // check if duplicated
             var duplicated = false
             for i in self.pIndex {

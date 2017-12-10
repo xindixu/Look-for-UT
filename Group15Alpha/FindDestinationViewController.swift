@@ -34,6 +34,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     // map stuff
     let locationManager = CLLocationManager()
     var firstTimeSeeMap = true
+    var correctGeoPotint: String = ""
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var timerL: UILabel!
@@ -105,6 +106,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
                     let value = snapshot.value as! NSDictionary
                     self.clue.text = value["Clue"] as! String
                     let geoPoint = value["GeoPoint"] as! String
+                    
                     self.checkPos(geopoint: geoPoint)
                 })
             })
@@ -113,6 +115,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
     
     
     @IBAction func checkAnswer(_ sender: Any) {
+        //self.checkPos(geopoint: self.correctGeoPotint)
         // change it to "xxx" is equal to "xxx "
         print(self.isCorrect)
         if self.isCorrect {
