@@ -36,3 +36,4 @@ Player will need to go to Little Fountain to start game.
 Once in game, open excel sheet named “Location Coordinates”
 Repeat steps 4-7 with the appropriate question number to latitude-longitude pair.
 
+Because of the complexity of the location coordination, we are not able to achieve the exact precision. However, our app is able to run on lower level of precision. You can check it via changing the location super off the correct coordinates, i.e. Apple. 
