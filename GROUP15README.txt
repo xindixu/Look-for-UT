@@ -1,21 +1,25 @@
 Implementation Contributions:
 
-Wenhui Lu: 45%
+Wenhui Lu: 40%
 Coordinates in Firebase
 Location check
 
-Billy Ngo: 10%
+Billy Ngo: 20%
 Minor Bugs
+Readme
+Excel with firebase
 
-Xindi Xu: 45%
+Xindi Xu: 40%
 Location Check
 Constraints for items
+Major bugs
 
 Grading Level:
 Same grade for all members.
 
 Differences:
 There is no coupon for the winner.
+AR functionality removed.
 
 Special Instructions:
 Player will need to go to Little Fountain to start game.
@@ -26,4 +30,7 @@ Player will need to go to Little Fountain to start game.
 5) Type in 30.2837284764915 for latitude
 6) Type in -97.73958921432495 for longitude
 7) Click OK to go to game screen
-8)
+
+Once in game, open excel sheet named “Location Coordinates”
+Repeat steps 4-7 with the appropriate question number to latitude-longitude pair.
+
