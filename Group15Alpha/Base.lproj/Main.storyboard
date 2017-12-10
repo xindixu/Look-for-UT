@@ -690,7 +690,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbT-WB-Vcw">
-                                <rect key="frame" x="16" y="184" width="288" height="21"/>
+                                <rect key="frame" x="16" y="211" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cnI-jI-vzm"/>
                                 </constraints>
@@ -699,10 +699,10 @@
                                     <action selector="checkAnswer:" destination="9nc-c9-HcC" eventType="touchUpInside" id="np5-jD-XQz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which place student go everyday?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-v0-DBc">
-                                <rect key="frame" x="16" y="91" width="288" height="63"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which place student go everyday?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-v0-DBc">
+                                <rect key="frame" x="16" y="91" width="288" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="jk2-ML-XlQ"/>
+                                    <constraint firstAttribute="height" constant="90" id="jk2-ML-XlQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -726,7 +726,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="muo-03-MbB">
-                                <rect key="frame" x="16" y="225" width="288" height="282"/>
+                                <rect key="frame" x="16" y="252" width="288" height="255"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

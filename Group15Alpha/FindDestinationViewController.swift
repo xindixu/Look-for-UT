@@ -54,7 +54,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
             updateQuestion()
         }
         else{
-            self.clue.text = "This is the tutorial, please enter A0"
+            self.clue.text = "This is the tutorial, please go to the places this text suggested.\nFor example, if the clue is pointing to FAC, please go to FAC."
             self.correctAnswer = "A0"
         }
         runTimer()
