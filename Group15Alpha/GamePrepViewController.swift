@@ -93,7 +93,7 @@ class GamePrepViewController: UIViewController,CLLocationManagerDelegate {
         }
         print(self.lati)
         print(self.long)
-        if self.isCorrect == true {
+        if self.isCorrect {
             let viewController = self.storyboard?.instantiateViewController(withIdentifier: "findDestination") as! FindDestinationViewController
             self.present(viewController, animated: true, completion: nil)
         }
