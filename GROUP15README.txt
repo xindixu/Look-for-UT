@@ -1,13 +1,13 @@
 Implementation Contributions:
 
-Wenhui Lu: 30%
+Wenhui Lu: 45%
 Coordinates in Firebase
 Location check
 
-Billy Ngo: 30%
+Billy Ngo: 10%
 Minor Bugs
 
-Xindi Xu: 40%
+Xindi Xu: 45%
 Location Check
 Constraints for items
 
