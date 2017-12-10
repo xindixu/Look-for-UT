@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="20" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94D-H7-Fgt">
-                                <rect key="frame" x="10" y="116" width="300" height="393"/>
+                                <rect key="frame" x="10" y="72" width="300" height="437"/>
                                 <color key="backgroundColor" red="1" green="0.98958333330000003" blue="0.98958333330000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -435,7 +435,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;code&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVo-2K-see">
-                                <rect key="frame" x="120" y="361" width="80" height="21"/>
+                                <rect key="frame" x="120" y="405" width="80" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="YaG-Gr-iEh"/>
                                     <constraint firstAttribute="width" constant="80" id="fHC-KC-dZ2"/>
@@ -457,7 +457,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGM-PJ-9j3">
-                                <rect key="frame" x="10" y="422" width="300" height="30"/>
+                                <rect key="frame" x="10" y="466" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="jSE-OG-wPO"/>
                                 </constraints>
@@ -467,7 +467,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To invite your friends to join your team, please ask them to enter the code below:" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="4" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2O2-lg-B3b">
-                                <rect key="frame" x="10" y="248" width="300" height="73"/>
+                                <rect key="frame" x="10" y="292" width="300" height="73"/>
                                 <color key="backgroundColor" red="1" green="0.98958333330000003" blue="0.98958333330000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="Kra-JG-p3p"/>
@@ -478,7 +478,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="020-nerd-3" translatesAutoresizingMaskIntoConstraints="NO" id="st6-W8-Gvr">
-                                <rect key="frame" x="-96" y="80" width="512" height="128"/>
+                                <rect key="frame" x="-96" y="124" width="512" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="pFB-D7-bIk"/>
                                 </constraints>
@@ -606,7 +606,7 @@
                                 <rect key="frame" x="16" y="490" width="288" height="30"/>
                                 <state key="normal" title="click start after everyone gets together"/>
                                 <connections>
-                                    <segue destination="9nc-c9-HcC" kind="show" identifier="toGame" id="iJ0-DP-ROt"/>
+                                    <action selector="checkStartingPoint:" destination="TiA-v1-0Mf" eventType="touchUpInside" id="yNT-wx-M3V"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFv-zZ-crv">
@@ -934,8 +934,7 @@
         <image name="tutorialimg" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oVJ-at-JkQ"/>
-        <segue reference="4IE-r2-9j1"/>
-        <segue reference="91Z-Oi-RV7"/>
+        <segue reference="2z0-v0-wZm"/>
+        <segue reference="tuz-FS-CXT"/>
     </inferredMetricsTieBreakers>
 </document>
