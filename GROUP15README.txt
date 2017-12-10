@@ -1,28 +1,21 @@
 Implementation Contributions:
 
 Wenhui Lu: 30%
-mapKit,
-disabled auto-correction
+Coordinates in Firebase
+Location check
 
 Billy Ngo: 30%
-account settings
+Minor Bugs
 
 Xindi Xu: 40%
-database managing
-sync & randomize questions among team members
-login/register 
+Location Check
+Constraints for items
 
 Grading Level:
-Same grand for all members
+Same grade for all members.
 
 Differences:
-Sharing has not yet implemented
-GeoPoint detection has not yet implemented 
-Randomization of questions 
+None
 
 Special Instructions:
-Testing accounts: 1@utexas.edu 2@utexas.edu …. (you can also register it)
-Answer “A1” for question that starts with “1”, “A2” for “2”, etc. 
-You don’t have to capitalize alphabets when you entering the code for the team 
-Maximum number for teammates: 5
-Please be patient with the map
+Player will need to go to Little Fountain to start game.
