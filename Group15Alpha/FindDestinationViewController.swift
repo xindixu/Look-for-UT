@@ -188,7 +188,7 @@ class FindDestinationViewController: UIViewController,CLLocationManagerDelegate 
         let correctLati = Double(results[0])
         let correctLong = Double(results[1])
         
-        if abs(self.lati - correctLati!) < 0.001 && abs(self.long - correctLong!) < 0.001 {
+        if abs(self.lati - correctLati!) < 0.005 && abs(self.long - correctLong!) < 0.005 {
             self.isCorrect = true
         }
         else{
