@@ -20,6 +20,8 @@ Same grade for all members.
 Differences:
 There is no coupon for the winner.
 AR functionality removed.
+Changed random assigning of teams to code input
+Search and Add friends functionality removed
 
 Special Instructions:
 Player will need to go to Little Fountain to start game.
